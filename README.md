@@ -1,2 +1,2 @@
-# OpaGrappa-NodeCapstone
-Opa!Grappa!! is the Node Capstone Project with Thinkful
+# OpaGrappa
+Opa!Grappa!! is a Node Capstone Project with Thinkful
