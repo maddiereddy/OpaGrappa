@@ -1,0 +1,35 @@
+{
+  "name": "opagrappa",
+  "version": "1.0.0",
+  "description": "Node capstone project for Thinkful",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maddiereddy/OpaGrappa.git"
+  },
+  "keywords": [
+    "Node",
+    "Express",
+    "API",
+    "Travis",
+    "Mocha",
+    "Heroku",
+    "Javascript",
+    "HTML",
+    "CSS",
+    "jQuery"
+  ],
+  "author": "Maddie Rajavasireddy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maddiereddy/OpaGrappa/issues"
+  },
+  "homepage": "https://github.com/maddiereddy/OpaGrappa#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
