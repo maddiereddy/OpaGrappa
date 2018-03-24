@@ -21,8 +21,8 @@ describe('Opa Grappa', function () {
 		return chai.request(app)
 			.get('/')
 			.then(function(res) {
-				expect(res).should.have.status(200);
-				expect(res).should.be.html;
+				expect(res).to.have.status(200);
+				expect(res).to.be.html;
 			})
 	});
 });

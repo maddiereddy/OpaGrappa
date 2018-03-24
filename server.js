@@ -8,13 +8,10 @@ const app = express();
 app.use(morgan('common'));
 app.use(express.static('public'));
 
-app.get('/', (req, res) => {
-	res.sendFile(__dirname + '/public/index.html');
-});
 
 // you need to import the router and route
 // requests to HTTP requests to `/` to `router`
-// app.use('/', opaRouter);
+app.use('/', opaRouter);
 
 // both runServer and closeServer need to access the same
 // server object, so we declare `server` here, and then when
