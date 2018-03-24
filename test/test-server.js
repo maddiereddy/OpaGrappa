@@ -16,13 +16,13 @@ describe('Opa Grappa', function () {
 	after(function() {
 		return closeServer();
 	});
-	
+
 	it('should return response 200 and html', function() {
 		return chai.request(app)
 			.get('/')
 			.then(function(res) {
-				res.should.have.status(200);
-				res.should.be.html;
+				expect(res).should.have.status(200);
+				expect(res).should.be.html;
 			})
 	});
 });
