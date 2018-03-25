@@ -21,7 +21,7 @@
 body {
 	font-family: 'Barlow', sans-serif;
   position: absolute;
-  background: lightgray url("./../images/landing.jpg") no-repeat center center fixed; 
+  background: lightgray url("./../images/Landing.jpg") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
