@@ -8,14 +8,8 @@ const app = express();
 app.use(morgan('common'));
 app.use(express.static('public'));
 
-
-// you need to import the router and route
-// requests to HTTP requests to `/` to `router`
 app.use('/', opaRouter);
 
-// both runServer and closeServer need to access the same
-// server object, so we declare `server` here, and then when
-// runServer runs, it assigns a value.
 let server;
 
 // this function starts our server and returns a Promise.
