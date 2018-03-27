@@ -20,7 +20,7 @@ describe('Protected endpoint', function () {
   const password = 'examplePass';
 
   before(function () {
-    return runServer(TEST_DATABASE_URL);
+    return runServer(DATABASE_URL);
   });
 
   after(function () {

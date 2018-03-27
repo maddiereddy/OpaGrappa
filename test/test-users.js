@@ -5,7 +5,7 @@ const chaiHttp = require('chai-http');
 
 const { app, runServer, closeServer } = require('../server');
 const { User } = require('../users');
-const { TEST_DATABASE_URL } = require('../config');
+const { DATABASE_URL } = require('../config');
 
 const expect = chai.expect;
 

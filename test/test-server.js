@@ -28,7 +28,7 @@ describe('Opa Grappa', function () {
 
 	it('should return response 200 and signup.html', function() {
 		return chai.request(app)
-			.get('signup.html')
+			.get('/signup.html')
 			.then(function(res) {
 				expect(res).to.have.status(200);
 				expect(res).to.be.html;
@@ -37,7 +37,7 @@ describe('Opa Grappa', function () {
 
 	it('should return response 200 and login.html', function() {
 		return chai.request(app)
-			.get('login.html')
+			.get('/login.html')
 			.then(function(res) {
 				expect(res).to.have.status(200);
 				expect(res).to.be.html;
@@ -46,7 +46,7 @@ describe('Opa Grappa', function () {
 
 	it('should return response 200 and dashboard.html', function() {
 		return chai.request(app)
-			.get('dashboard.html')
+			.get('/dashboard.html')
 			.then(function(res) {
 				expect(res).to.have.status(200);
 				expect(res).to.be.html;
