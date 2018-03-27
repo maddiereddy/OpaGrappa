@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="description" content="Wine tracking app that keeps a list of all wines consumed by user">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OpaGrappa</title>
+    <link href="https://fonts.googleapis.com/css?family=Barlow|Montserrat|Julee" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/signup-login.css">
+  </head>
+  <body>
+  	<header>
+      <h1>Opa! Grappa!!</h1>
+    </header>
+
+    <main>
+      <a href="/login"><h2>Login</h2></a>
+    </main>
+
+	  <form role="form" class="setup-form">
+		  <fieldset>
+		    <legend>Sign up</legend>
+		    <label for="user-email">Email</label>
+		    <input type="email" placeholder="foo@bar.com" name="user-email" id="user-email" required/>
+		    <label for="user-password">Password</label>
+		    <input placeholder="1234passw0rd" type="password" name="user-password" id="user-password" required/>
+		    <label for="user-confirm-password">Confirm Password</label>
+		    <input placeholder="1234passw0rd" type="password" name="user-confirm-password" id="user-confirm-password" required/>
+		    <button type="submit" onclick="window.location.href='/dashboard'">Sign up</button>
+		  </fieldset>
+		</form>
+
+		<footer role="contentinfo">
+      <p><i class="fa fa-copyright" aria-hidden="true"></i> maddiereddy.com</p>
+      <p>Background image by
+        <a href='https://www.freepik.com/free-photo/woman-holds-glass-of-wine-before-bunch-of-grape-lying-on-black-plate_1114263.htm'>Designed by Freepik</a>
+      </p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  </body>
+</html>
