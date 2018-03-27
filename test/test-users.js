@@ -21,7 +21,7 @@ describe('/user', function () {
   const passwordB = 'examplePassB';
 
   before(function () {
-    return runServer(TEST_DATABASE_URL);
+    return runServer(DATABASE_URL);
   });
 
   after(function () {
