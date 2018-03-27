@@ -17,17 +17,17 @@
     </header>
 
     <main>
-      <a href="/signup"><h2>Register</h2></a>
+      <a href="signup.html"><h2>Register</h2></a>
     </main>
 
 	  <form role="form" class="setup-form">
 		  <fieldset>
 		    <legend>Login</legend>
-		    <label for="user-email">Email</label>
-		    <input type="email" placeholder="foo@bar.com" name="user-email" id="user-email" required/>
-		    <label for="user-password">Password</label>
-		    <input placeholder="1234passw0rd" type="password" name="user-password" id="user-password" required/>
-		    <button type="submit" onclick="window.location.href='/dashboard'">Login</button>
+		    <label for="username">Email</label>
+		    <input type="email" placeholder="username" name="username" id="username" required/>
+		    <label for="password">Password</label>
+		    <input placeholder="password" type="password" name="password" id="password" required/>
+		    <button type="submit">Login</button>
 		  </fieldset>
 		</form>
 
@@ -39,5 +39,6 @@
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../js/login.js"></script>
   </body>
 </html>

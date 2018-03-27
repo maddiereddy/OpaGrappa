@@ -33,7 +33,6 @@ body {
   height: 100%;
   width: 100%;
   opacity: 1;
-  z-index: -1;
 }
 
 header, main, footer {
@@ -66,15 +65,30 @@ header h2 {
 }
 
 main {
-  position: absolute;
-	text-align: right;
-	font-size: 2em;
-	margin-top: 20px;
-  padding-right: 30px;
+  width: 20%;
+  margin-top: 20%;
 }
 
-main a {
-  color: firebrick;
+.user-button {
+    margin: 5px;
+    font-size: 16px;
+    border-top-left-radius: 0.5rem;
+    border-bottom-right-radius: .5rem;
+    color: silver;
+    background-color: firebrick;
+    border-color: #9e9e9e;
+    line-height: 25px;
+    padding: 0.7rem 1.1rem;
+    width: 10rem;
+    display: inline-block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.user-button:hover {
+    cursor: pointer;
+    background-color: maroon;
 }
 
 footer {
