@@ -9,13 +9,13 @@ const expect = chai.expect;
 chai.use(chaiHttp);
 
 describe('Opa Grappa', function () {
-  before(function() {
-		return runServer();
-	});
+ //  before(function() {
+	// 	return runServer();
+	// });
 
-	after(function() {
-		return closeServer();
-	});
+	// after(function() {
+	// 	return closeServer();
+	// });
 
 	it('should return response 200 and index.html', function() {
 		return chai.request(app)

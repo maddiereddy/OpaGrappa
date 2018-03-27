@@ -18,8 +18,6 @@ chai.use(chaiHttp);
 describe('Protected endpoint', function () {
   const username = 'exampleUser';
   const password = 'examplePass';
-  const firstName = 'Example';
-  const lastName = 'User';
 
   before(function () {
     return runServer(TEST_DATABASE_URL);
@@ -33,9 +31,7 @@ describe('Protected endpoint', function () {
     return User.hashPassword(password).then(password =>
       User.create({
         username,
-        password,
-        firstName,
-        lastName
+        password
       })
     );
   });
@@ -44,11 +40,11 @@ describe('Protected endpoint', function () {
     return User.remove({});
   });
 
-  describe('/api/protected', function () {
+  describe('/protected', function () {
     it('Should reject requests with no credentials', function () {
       return chai
         .request(app)
-        .get('/api/protected')
+        .get('/protected')
         .then(() =>
           expect.fail(null, null, 'Request should not succeed')
         )
@@ -65,9 +61,7 @@ describe('Protected endpoint', function () {
     it('Should reject requests with an invalid token', function () {
       const token = jwt.sign(
         {
-          username,
-          firstName,
-          lastName
+          username
         },
         'wrongSecret',
         {
@@ -78,7 +72,7 @@ describe('Protected endpoint', function () {
 
       return chai
         .request(app)
-        .get('/api/protected')
+        .get('/protected')
         .set('Authorization', `Bearer ${token}`)
         .then(() =>
           expect.fail(null, null, 'Request should not succeed')
@@ -96,9 +90,7 @@ describe('Protected endpoint', function () {
       const token = jwt.sign(
         {
           user: {
-            username,
-            firstName,
-            lastName
+            username
           },
           exp: Math.floor(Date.now() / 1000) - 10 // Expired ten seconds ago
         },
@@ -111,7 +103,7 @@ describe('Protected endpoint', function () {
 
       return chai
         .request(app)
-        .get('/api/protected')
+        .get('/protected')
         .set('authorization', `Bearer ${token}`)
         .then(() =>
           expect.fail(null, null, 'Request should not succeed')
@@ -129,9 +121,7 @@ describe('Protected endpoint', function () {
       const token = jwt.sign(
         {
           user: {
-            username,
-            firstName,
-            lastName
+            username
           }
         },
         JWT_SECRET,
@@ -144,7 +134,7 @@ describe('Protected endpoint', function () {
 
       return chai
         .request(app)
-        .get('/api/protected')
+        .get('/protected')
         .set('authorization', `Bearer ${token}`)
         .then(res => {
           expect(res).to.have.status(200);
