@@ -9,8 +9,7 @@ function logUserIn(userData) {
     success: function(data) {
       localStorage.setItem('token', data.authToken);
       localStorage.setItem('user', userData.username);
-      console.log("success")
-      window.location.href = 'dashboard.html';
+      window.location.href = '/dashboard.html';
     },
     error: function(data) {
       console.log("Error: user authentication failed.");
@@ -24,7 +23,8 @@ $('.setup-form').submit( function(event) {
   event.preventDefault()
   let userData = {
     username: $('#username').val(),
-    password: $('#password').val(),
+    password: $('#password').val()
   };
+  
   logUserIn(userData);
 })

@@ -8,7 +8,7 @@ fieldset {
 form {
 	margin: 100px auto;
   width: 40%;
-  padding: 20px 50px 30px 50px;
+  padding: 20px 50px 20px 50px;
   border-radius: 3px;
   background: white;
 }
@@ -24,6 +24,10 @@ form legend {
   margin: 0 auto 10px;
 }
 
+form p {
+  margin-top: 10px;
+  text-align: center;
+}
 
 input, button[type="submit"] {
   display: block;
@@ -31,7 +35,7 @@ input, button[type="submit"] {
   height: auto;
   font-size: 18px;
   text-align: left;
-  padding: 15px;
+  padding: 12px;
   border: 2px solid #e7e7e7;
   border-radius: 3px;
   background: #fcfcfc;

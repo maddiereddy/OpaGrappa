@@ -7,33 +7,29 @@
     <title>OpaGrappa</title>
     <link href="https://fonts.googleapis.com/css?family=Barlow|Montserrat|Julee" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/signup-login.css">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="signup-login.css">
   </head>
   <body>
   	<header>
       <h1>Opa! Grappa!!</h1>
     </header>
 
-    <main>
-      <a href="login.html"><h2>Login</h2></a>
-    </main>
+    <form role="form" class="setup-form"  method="POST">
+      <fieldset>
+        <legend>Login</legend>
+        <label for="username">Email</label>
+        <input type="email" placeholder="username" name="username" id="username" required/>
+        <label for="password">Password</label>
+        <input placeholder="password" type="password" name="password" id="password" required/>
+        <button type="submit">Login</button>
 
-	  <form role="form" class="setup-form">
-		  <fieldset>
-		    <legend>Sign up</legend>
-		    <label for="username">Email</label>
-		    <input type="email" placeholder="username" name="username" id="username" required/>
-		    <label for="password">Password</label>
-		    <input placeholder="password" type="password" name="password" id="password" required/>
-		    <label for="confirm-password">Confirm Password</label>
-		    <input placeholder="password" type="password" name="confirm-password" id="confirm-password" required/>
-		    <button type="submit">Sign up</button>
-		  </fieldset>
-		</form>
+        <p>Don't have an account? <a href="signup.html"> Create one here!</a></p>
+      </fieldset>
+    </form>  
 
-		<footer role="contentinfo">
+    <footer role="contentinfo">
       <p><i class="fa fa-copyright" aria-hidden="true"></i> maddiereddy.com</p>
       <p>Background image by
         <a href='https://www.freepik.com/free-photo/woman-holds-glass-of-wine-before-bunch-of-grape-lying-on-black-plate_1114263.htm'>Designed by Freepik</a>
@@ -41,6 +37,6 @@
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="../js/signup.js"></script>
+    <script type="text/javascript" src="login.js"></script>
   </body>
 </html>
