@@ -312,7 +312,7 @@ describe('/user', function () {
             expect(passwordIsCorrect).to.be.true;
           });
       });
-      
+    });  
     describe('GET', function () {
       it('Should return an empty array initially', function () {
         return chai.request(app).get('/users').then(res => {
@@ -346,5 +346,6 @@ describe('/user', function () {
           });
       });
     });
+
   });
 });
