@@ -10,9 +10,8 @@ const jsonParser = bodyParser.json();
 
 // Post to register a new user
 router.post('/', jsonParser, (req, res) => {
-
-  console.log(req.body.username);
-
+  console.log(`username: ${req.body.username}, password: ${req.body.password}`);
+  
   const requiredFields = ['username', 'password'];
   const missingField = requiredFields.find(field => !(field in req.body));
 
@@ -107,6 +106,8 @@ router.post('/', jsonParser, (req, res) => {
   return User.find({username})
     .count()
     .then(count => {
+      console.log(`count: ${count}`);
+
       if (count > 0) {
         // There is an existing user with the same username
         return Promise.reject({
@@ -120,17 +121,20 @@ router.post('/', jsonParser, (req, res) => {
       return User.hashPassword(password);
     })
     .then(hash => {
+      console.log(`hash: ${hash}`);
       return User.create({
         username,
         password: hash
       });
     })
     .then(user => {
+      console.log(`created user`);
       return res.status(201).json(user.serialize());
     })
     .catch(err => {
       // Forward validation errors on to the client, otherwise give a 500
       // error because something unexpected has happened
+      console.log(`reason: ${err.code}`);
       if (err.reason === 'ValidationError') {
         return res.status(err.code).json(err);
       }

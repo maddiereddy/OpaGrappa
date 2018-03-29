@@ -3,9 +3,9 @@
 function logUserIn(userData) {
   const settings = {
     url: '/auth/login',
-    data: userData,
-    content-type: 'application/json',
-    type: 'POST',
+    data: JSON.stringify(userData),
+    method: 'POST',
+    contentType: "application/json",
     success: function(data) {
       localStorage.setItem('token', data.authToken);
       localStorage.setItem('user', userData.username);

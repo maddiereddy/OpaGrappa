@@ -2,10 +2,10 @@
 
 function createNewUser(userData) {
   const settings = {
-    url: '/users/',
-    data: userData,
-    content-type: 'application/json',
+    url: '/users',
+    data: JSON.stringify(userData),
     method: 'POST',
+    contentType: "application/json",
     success: function(user) {
       window.location.href = "login.html";
     },
@@ -19,13 +19,13 @@ function createNewUser(userData) {
 
 $('.setup-form').submit( function(event) {
   event.preventDefault();
-
+  debugger;
   let newUserData = {
     username: $('#username').val(),
     password: $('#password').val(),
     confirmPassword: $('#confirm-password').val()
   };
-  
+
   if (newUserData.password !== newUserData.confirmPassword) {
     alert("Your passwords do not match! Enter and confirm a password.");
   } else {

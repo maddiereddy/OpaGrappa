@@ -5,7 +5,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const passport = require('passport');
-const bodyParser = require('body-parser');
 const app = express();
 
 const { router: usersRouter } = require('./users');
@@ -30,18 +29,25 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use(passport.initialize());
-passport.use('local', localStrategy);
+//app.use(passport.initialize());
+passport.use(localStrategy);
 passport.use(jwtStrategy);
 
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json());
+const jwtAuth = passport.authenticate('jwt', { session: false });
+
+// A protected endpoint which needs a valid JWT to access it
+app.get('/protected', jwtAuth, (req, res) => {
+  return res.json({
+    data: 'rosebud'
+  });
+});
 
 app.use(express.static('public'));
 
-app.use('/wines', winesRouter);
-app.use('/users', usersRouter);
-app.use('/auth', authRouter);
+app.use('/wines/', winesRouter);
+app.use('/users/', usersRouter);
+app.use('/auth/', authRouter);
+
 app.use('*', (req, res) => {
   return res.status(404).json({ message: 'Not Found' });
 });
