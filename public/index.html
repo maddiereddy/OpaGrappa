@@ -11,16 +11,62 @@
     <link rel="stylesheet" href="main.css">
   </head>
   <body>
-    <header>
-      <h1>Opa! Grappa!!</h1>
-      <h2>Keep track of your favorite wines!</h2>
+    <header id="signup-login">
+      <nav>
+        <ul class="signup-login-list">
+          <li>
+            <h1>Opa! Grappa!!</h1>
+          </li>
+          <li>
+            <h2>Keep track of your favorite wines!</h2>
+          </li>
+          <li class="signup-login-list-item">
+            <a id='login-account' href="login.html">Login</a>
+          </li>
+          <li class="signup-login-list-item">
+            <a id='create-account' href="signup.html">Create Account</a>
+          </li>
+        <ul>
+      </nav>
     </header>
-
     <main>
-       <a class="user-button" id='create-account' href="signup.html">Create Account</a><br>
-       <a class="user-button" id='login-account' href="login.html">Login</a><br>
+      <section class="learn-more">
+        <a class="user-button" href="#about">Learn more</a>
+      </section>
+      <div class="background-image"></div>
+      <section class="value-prop" id="about">
+        <ul class="value-prop__list">
+          <li class="value-prop__item">
+            <img class="value-prop__item-image" src="/images/glass.png">
+            <h2 class="value-prop__item-title">
+              Save your favorite wine! 
+            </h2>
+            <h3>
+              Had a great wine and afraid that you are going forget it? Don't fret, just save all the details of this excellent wine including pictures and comments!
+            </h3>
+          </li>
+          <li class="value-prop__item">
+            <img class="value-prop__item-image" src="/images/bottle.png">
+            <h2 class="value-prop__item-title">
+              Search through our extensive database of wines!
+            </h2>
+            <h3>
+              Looking for a particular wine? No problem. Just browse through our collection and see ratings and reviews too!
+            </h3>
+          </li>
+          <li class="value-prop__item">
+            <img class="value-prop__item-image" src="/images/grapes.png">
+            <h2 class="value-prop__item-title">
+              Want to humble brag on social media?
+            </h2>
+            <h3>
+              Easy peasy! Simply click on one of the social media icons next to your wine entry and voila!!
+            </h3>
+          </li>
+        </ul>
+        <p class="top"><a href="#">Top</a></p>
+      </section>
     </main>
-
     <footer role="contentinfo">
       <p><i class="fa fa-copyright" aria-hidden="true"></i> maddiereddy.com</p>
       <p>Background image by

@@ -6,11 +6,11 @@ fieldset {
 }
 
 form {
-	margin: 100px auto;
+	margin: 110px auto;
   width: 40%;
   padding: 20px 50px 20px 50px;
   border-radius: 3px;
-  background: white;
+  background: whitesmoke;
 }
 
 form legend {
@@ -36,8 +36,8 @@ input, button[type="submit"] {
   font-size: 18px;
   text-align: left;
   padding: 12px;
-  border: 2px solid #e7e7e7;
-  border-radius: 3px;
+  border: 2px solid firebrick;
+  border-radius: 12px;
   background: #fcfcfc;
   margin: 10px auto 20px;
   transition: opacity 0.4s;
@@ -64,7 +64,6 @@ button[type="submit"]:focus {
   transition: background 0.1s;
 }
 
-
 button.delete {
   background: #cd8613; 
 }
@@ -83,16 +82,12 @@ button a {
   color: white;
 }
 
-
-input, button[type="submit"]:focus {
- outline: auto 2px #87ceeb;
- outline: auto 5px -webkit-focus-ring-color;
- box-shadow: 0;
-}
-
-
 .setup-form {
 	width: 50%;
 	border: 2px solid firebrick;
 	border-radius: 10px;
+}
+
+.switch a {
+  color: firebrick;
 }
