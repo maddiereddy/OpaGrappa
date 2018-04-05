@@ -16,6 +16,20 @@
     -webkit-padding-end: 0px;
 }
 
+hr { 
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+}
+
+.hidden {
+  display: none;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -39,6 +53,7 @@ header, footer {
   padding: 1em;
   margin: 0 auto;
   text-align: center;
+  z-index: 100;
 }
 
 header {
@@ -61,6 +76,14 @@ header h2 {
   font-size: 1.5em;
   margin-left: 20px;
   margin-top: 40px;
+}
+
+caption {
+  font-family: 'Julee', cursive;
+  font-weight: bolder;
+  color: firebrick;
+  text-align: center;
+  font-size: 2em;
 }
 
 nav {
@@ -92,13 +115,14 @@ nav li a {
 }
 
 nav li a:hover:not(.active) {
-  background-color: maroon;
+  background-color: firebrick;
   color: gainsboro;
 }
 
-.signup-login-list-item {
+.signup-login-list-item, .search-list-item {
   float: right;
   margin-top: 25px;
+  cursor: pointer;
 }
 
 .active {
@@ -109,6 +133,10 @@ main {
   height: 100%;
   width: 100%;
   margin: auto;
+}
+
+.dashboard-main, .my-list-main{
+  margin-top: 130px;
 }
 
 .learn-more-section {
@@ -146,6 +174,7 @@ main {
   padding: 8px 15px;
   width: 150px;
   text-align: center;
+  text-decoration: none;
 }
 
 .learn-more-section .user-button:hover {
@@ -187,7 +216,7 @@ footer {
 .footer-copyright {
   display: inline-block;
   float: center;
-  margin: 0 10px;
+  margin: 0 5px;
   font-size: 12px;
 }
 
@@ -203,14 +232,92 @@ footer {
 
 .footer-contact a {
   color: gainsboro;
-  font-size: 2em;
+  font-size: 1.5em;
+  padding: 10px 5px;
+}
+
+
+/*
+  dashboard.html
+*/
+
+.search-section {
+  width: 70%;
+  margin: 130px 15% 50px 15%;
+  height: 100px;
+  border-radius: 10px;
+  font-family: sans-serif;
+  border: 2px solid firebrick;
+  padding: 15px;
+  display: block;
+}
+
+.search-section legend {
+  font-size: 1.2em;
+  font-weight: bolder;
+  color: firebrick;
+  padding: 2px 10px ;
+  margin-left: 20px;
+}
+
+.search-section select {
+  width: 30%;
+  margin: 0 1%;
+  background-color: firebrick;
+  font-size: 15px;
+  height: 30px;
+  color: gainsboro;
+  position: relative;
+}
+
+thead { 
+  display: table-row-group;
+}
+
+tbody {
+  margin: 0 auto;
+  overflow: auto; 
+}
+
+tbody td a {
+  text-decoration: none;
+}
+
+.wines-table {
+  margin: 50px 15%;
+  height: 300px;
+  font: 13px Arial, Helvetica, sans-serif;
+  color: firebrick;
+  width: 70%;
+  border: 2px solid firebrick;
+  border-radius: 10px;
   padding: 5px;
 }
 
-.footer-image {
-  font-size: 10px;
-  margin-top: 5px;
-} 
+.wines-table th {
+  background-color: firebrick;
+  text-align: center;
+  color: gainsboro;
+}
+
+.wines-table td {
+  text-align: left;
+}
+
+.wines-table td,
+.wines-table th {
+  border: 1px solid gainsboro;
+  padding: 8px;
+}
+
+.wines-table tr:nth-child(even) {
+  background-color: gainsboro;
+}
+
+.wines-table tr:nth-child(odd) {
+  background-color: lightgray;
+}
+
   
 @media (min-width: 900px) {
   .about-section-list {
@@ -266,7 +373,7 @@ footer {
 
 @media screen and (max-width: 480px) {
 
-  #login-account, #create-account {
+  .signup-login-list-item {
     font-size: 12px;
     float: right;
     margin-top: 0;
@@ -287,5 +394,4 @@ footer {
     margin: 40% auto;
   }
 }
-
 

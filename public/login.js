@@ -9,7 +9,7 @@ function logUserIn(userData) {
     success: function(data) {
       localStorage.setItem('token', data.authToken);
       localStorage.setItem('user', userData.username);
-      window.location.href = '/dashboard.html';
+      window.location.href = '/my-list.html';
     },
     error: function(data) {
       console.log("Error: user authentication failed.");

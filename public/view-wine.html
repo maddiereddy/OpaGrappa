@@ -1,1 +1,68 @@
-view-wine.html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>OpaGrappa</title>
+    <meta name="description" content="Wine tracking app that keeps a list of all wines consumed by user">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Barlow|Montserrat|Julee" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="signup-login.css">
+  </head>
+  <body>
+  	<header>
+      <nav>
+        <ul class="signup-login-list">
+          <li class="caption-list-item">
+            <h1>Opa! Grappa!!</h1>
+          </li>
+          <li class="signup-login-list-item">
+            <a href="index.html" class="logout">Log Out</a>
+          </li>
+        <ul>
+      </nav>
+    </header>
+    <fieldset class="wine-details-section">
+      <legend>Details</legend>
+      <label for="wine-title">Name</label>
+      <input type="text" name="wine-title" id="wine-title" readonly/>
+
+      <label class="half-width" for="wine-designation">Designation</label> 
+      <label class="half-width right" for="wine-type">Type</label>
+      <input class="half-width" type="text" name="wine-designation" id="wine-designation" readonly/>
+      <input class="half-width right" type="text" name="wine-type" id="wine-type" readonly/>
+
+      <label for="wine-winery">Winery/Vineyard</label>
+      <input type="text" name="wine-winery" id="wine-winery" readonly/>
+      <label for="wine-region">Region</label>
+      <input type="text" name="wine-region" id="wine-region" readonly/>
+
+      <label class="half-width" for="wine-price">Price</label>
+      <label class="half-width right" for="wine-points">Wine Enthusiast Rating</label>
+      <input class="half-width" type="text" name="wine-price" id="wine-price" readonly/>
+      <input class="half-width right" type="text" name="wine-points" id="wine-points" readonly/>
+
+      <label for="wine-description">Description</label>
+      <textarea name="wine-description" id="wine-description" readonly></textarea>
+      
+      <button type="submit" id="back-button">Go Back</button>
+    </fieldset>
+		<footer role="contentinfo">
+      <section class="footer-copyright">
+        <p>
+          <i class="fa fa-copyright" aria-hidden="true"></i> OpaGrappa 2018 by Maddie Rajavasireddy
+        </p>
+      </section>
+      <section class="footer-contact">
+        <a href="https://github.com/maddiereddy/OpaGrappa" title="Check out my code on GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>
+        <a href="mailto:maddiereddy@gmail.com?Subject=Hello" title="Send me an email"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+      </section>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="view-wine.js"></script>
+  </body>
+</html>

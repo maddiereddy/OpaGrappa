@@ -11,8 +11,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="./normalize.css">
     <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./signup-login.css">
   </head>
-  <body class="hidden">
+  <body>
     <header id="signup-login">
       <nav>
         <ul class="signup-login-list">
@@ -23,38 +24,15 @@
             <a href="index.html" class="logout">Log Out</a>
           </li>
           <li class="signup-login-list-item">
-            <a href="my-list.html">My List</a>
-          </li>
-          <li class="search-list-item">
-            <a>Search</a>
+            <a href="dashboard.html">Search</a>
           </li>
         <ul>
       </nav>
     </header>
     <main role="main" class="dashboard-main">
-      <form class="hidden">
-        <fieldset id="search" class="search-section">
-          <legend>Search</legend>
-          <select class="state-select" name="state" >
-            <option value="0">Select state:</option>
-            <option value="AL">Alabama</option>
-            <option value="WY">Wyoming</option>
-          </select>
-          <select class="region-select" name="region" >
-            <option value="0">Select region:</option>
-            <option value="1">Napa Valley</option>
-            <option value="1">Sonoma Valley</option>
-          </select>
-          <select class="winery-select" name="winery" >
-            <option value="0">Select vineyard/winery:</option>
-            <option value="1">Stag's Leap</option>
-            <option value="2">Opus One</option>
-          </select>
-        </fieldset>
-      </form>
       <section class="table-section">
         <table class="wines-table">
-          <caption>Search Results</caption>
+          <caption>List of my favorite wines</caption>
           <thead>
             <tr>
               <th>Name</th>
@@ -64,7 +42,7 @@
           </thead>
           <tbody>
              <tr>
-              <td><a href="view-wine.html">Sweet Cheeks 2012 Vintner's Reserve Wild Child Block Pinot Noir (Willamette Valley)</a></td>
+              <td>Sweet Cheeks 2012 Vintner's Reserve Wild Child Block Pinot Noir (Willamette Valley)</td>
               <td>Pinot Noir</td>
               <td>$65</td>
             </tr>
@@ -180,7 +158,6 @@
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-    <script src="./dashboard.js"></script>
+    <script type="text/javascript" src="my-list.js"></script>
   </body>
 </html>
