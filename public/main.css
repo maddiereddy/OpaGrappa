@@ -262,12 +262,29 @@ footer {
 
 .search-section select {
   width: 30%;
-  margin: 0 1%;
+  margin: 0 0.5%;
   background-color: firebrick;
   font-size: 15px;
   height: 30px;
   color: gainsboro;
   position: relative;
+}
+
+.search-section button {
+  font-size: 1.4em;
+  background-color: firebrick;
+  color: gainsboro;
+  border: 2px solid firebrick;
+  border-radius: 10px;
+  margin-top: -2px;
+  float: right;
+  padding: 5px;
+}
+
+.search-section button:hover {
+  background-color: lightgray;
+  color: firebrick;
+  border: 3px solid firebrick;
 }
 
 thead { 
