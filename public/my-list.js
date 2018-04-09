@@ -1,5 +1,8 @@
 'use strict';
 
+let user = localStorage.getItem('user');
+let token = localStorage.getItem('token');
+
 $("#back-button").click(function() {
 	window.history.back();
 });
