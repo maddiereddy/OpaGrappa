@@ -288,10 +288,11 @@ footer {
 }
 
 thead { 
-  display: table-row-group;
+  display: table-header-group;
 }
 
 tbody {
+  display: table-row-group;
   margin: 0 auto;
   overflow: auto; 
 }
@@ -305,8 +306,11 @@ tbody td a:visited {
 }
 
 .wines-table {
+  table-layout: auto;
+  border-collapse: collapse;
+  width: 100%;
   margin: 50px 15%;
-  height: 300px;
+  height: 100px;
   font: 13px Arial, Helvetica, sans-serif;
   color: firebrick;
   width: 70%;
@@ -329,6 +333,10 @@ tbody td a:visited {
 .wines-table th {
   border: 1px solid gainsboro;
   padding: 8px;
+}
+
+.wines-table .absorbing-column {
+  width: 100%;
 }
 
 .wines-table tr:nth-child(even) {

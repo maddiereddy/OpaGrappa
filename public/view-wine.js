@@ -1,16 +1,46 @@
 'use strict';
 
+let user = localStorage.getItem('user');
+let token = localStorage.getItem('token');
+
 $("#back-button").click(function() {
 	window.history.back();
 });
 
+function getDetails(wineId) {
+	const settings = {
+    url: `/wines/${wineId}`,
+    headers: { 'Authorization': `Bearer ${token}` },
+    dataType: 'json',
+    type: 'GET',
+    success: function(wine) {
+      renderDetails(wine);
+    },
+    error: function(data) {
+      console.log("Error: API could not answer your get request.");
+    }
+  };
+  $.ajax(settings);
+
+}
+
+function renderDetails(wine) {
+
+	$("#wine-title").val(wine.name);
+	$("#wine-type").val(wine.type);
+	$("#wine-winery").val(wine.winery);
+	$("#wine-region").val(wine.region);
+	$("#wine-state").val(wine.state);
+	$("#wine-price").val(wine.cost);
+	$("#wine-points").val(wine.rating);
+	$("#wine-description").text(wine.description);
+}
+
 $(function() {
-	$('#wine-title').val("Sweet Cheeks 2012 Vintner's Reserve Wild Child Block Pinot Noir (Willamette Valley)");
-	$("#wine-designation").val("Vintner's Reserve Wild Child Block");
-	$("#wine-type").val("Pinot Noir");
-	$("#wine-winery").val("Sweet Cheeks");
-	$("#wine-region").val("Willamette Valley");
-	$("#wine-price").val("$65");
-	$("#wine-points").val("87 pts");
-	$("#wine-description").text("Much like the regular bottling from 2012, this comes across as rather rough and tannic, with rustic, earthy, herbal characteristics. Nonetheless, if you think of it as a pleasantly unfussy country wine, it's a good companion to a hearty winter stew.");
+	let hrefString = window.location.href;
+	var getId = new Array();
+	let getIdString = hrefString.split("?");
+	getId = getIdString[1].split("=");
+
+	getDetails(getId[1]);
 })

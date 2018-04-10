@@ -101,6 +101,45 @@ function renderWineries(wineries) {
 	$('.winery-select').append(listItems);
 }
 
+$('.winery-select').change(function() {
+	var winery = $('.winery-select option:selected').text();
+	getWines(winery);
+});
+
+function getWines(winery) {
+  const settings = {
+    url: `/wines/list/${winery}`,
+    headers: { 'Authorization': `Bearer ${token}` },
+    dataType: 'json',
+    type: 'GET',
+    success: function(wines) {
+      renderWines(wines);
+    },
+    error: function(data) {
+      console.log("Error: API could not answer your get request.");
+    }
+  };
+  $.ajax(settings);
+}
+
+function renderWines(wines) {
+  var listItems = '';
+
+	wines.map(wine => {
+		let hrefStr = "view-wine.html?id=" + wine.wineId;
+	  listItems += 
+	  				`<tr>
+              <td><a href="${hrefStr}">${wine.name}</a></td>
+              <td>${wine.type}</td>
+              <td>${wine.cost}</td>
+              <td><i class="fa fa-plus" aria-hidden="true"></i></td>
+            </tr>`;
+	});
+
+	$('.table-body').html('');
+	$('.table-body').append(listItems);
+}
+
 $(function() {
 	//if token is null, then user NOT logged in, so direct them to login
 	if ((token === null) || (user === null)) {
