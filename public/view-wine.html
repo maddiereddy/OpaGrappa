@@ -25,31 +25,37 @@
         <ul>
       </nav>
     </header>
-    <fieldset class="wine-details-section">
-      <legend>Details</legend>
-      <label for="wine-title">Name</label>
-      <input type="text" name="wine-title" id="wine-title" readonly/>
+    <form role="form" class="wine-details-section" method='post' >
+      <fieldset>
+        <legend>Selected Wine Details</legend>
+        <label for="wine-title">Name</label>
+        <input type="text" name="wine-title" id="wine-title" readonly/>
 
-      <label class="half-width" for="wine-type">Type</label> 
-      <label class="half-width right" for="wine-winery">Winery/Vineyard</label>
-      <input class="half-width" type="text" name="wine-type" id="wine-type" readonly/>
-      <input class="half-width right" type="text" name="wine-winery" id="wine-winery" readonly/>
+        <label class="half-width" for="wine-type">Type</label> 
+        <label class="half-width right" for="wine-winery">Winery/Vineyard</label>
+        <input class="half-width" type="text" name="wine-type" id="wine-type" readonly/>
+        <input class="half-width right" type="text" name="wine-winery" id="wine-winery" readonly/>
 
-      <label class="half-width" for="wine-region">Region</label>
-      <label class="half-width right" for="wine-state">State</label>
-      <input class="half-width" type="text" name="wine-region" id="wine-region" readonly/>
-      <input class="half-width right" type="text" name="wine-state" id="wine-state" readonly/>
+        <label class="half-width" for="wine-region">Region</label>
+        <label class="half-width right" for="wine-state">State</label>
+        <input class="half-width" type="text" name="wine-region" id="wine-region" readonly/>
+        <input class="half-width right" type="text" name="wine-state" id="wine-state" readonly/>
 
-      <label class="half-width" for="wine-price">Price</label>
-      <label class="half-width right" for="wine-points">Wine Enthusiast Rating</label>
-      <input class="half-width" type="text" name="wine-price" id="wine-price" readonly/>
-      <input class="half-width right" type="text" name="wine-points" id="wine-points" readonly/>
+        <label class="half-width" for="wine-price">Price</label>
+        <label class="half-width right" for="wine-points">Wine Enthusiast Rating</label>
+        <input class="half-width" type="text" name="wine-price" id="wine-price" readonly/>
+        <input class="half-width right" type="text" name="wine-points" id="wine-points" readonly/>
 
-      <label for="wine-description">Description</label>
-      <textarea name="wine-description" id="wine-description" readonly></textarea>
-      
-      <button type="submit" id="back-button">Go Back</button>
-    </fieldset>
+        <label for="wine-description">Description</label>
+        <textarea name="wine-description" id="wine-description" readonly></textarea>
+
+        <label for="wine-comments">Comments</label>
+        <textarea name="wine-comments" id="wine-comments" placeholder="Add comments here"></textarea>
+        
+        <button type="button" id="back-button">Go Back</button>
+        <button type="submit" id="add-button">Add Wine</button>
+      </fieldset>
+    </form>
 		<footer role="contentinfo">
       <section class="footer-copyright">
         <p>

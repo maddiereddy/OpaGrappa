@@ -19,7 +19,7 @@ function createNewUser(userData) {
 
 $('.setup-form').submit( function(event) {
   event.preventDefault();
-  debugger;
+  
   let newUserData = {
     username: $('#username').val(),
     password: $('#password').val(),

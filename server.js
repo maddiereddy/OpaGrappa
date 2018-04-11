@@ -9,6 +9,7 @@ const app = express();
 
 const { router: usersRouter } = require('./users');
 const { router: winesRouter } = require('./wines');
+const { router: listRouter } = require('./mylist');
 const { router: authRouter, localStrategy, jwtStrategy } = require('./auth');
 
 mongoose.Promise = global.Promise;
@@ -45,11 +46,12 @@ app.get('/protected', jwtAuth, (req, res) => {
 app.use(express.static('public'));
 
 app.use('/wines/', winesRouter);
+app.use('/mylist/', listRouter);
 app.use('/users/', usersRouter);
 app.use('/auth/', authRouter);
 
 app.use('*', (req, res) => {
-  return res.status(404).json({ message: 'Not Found' });
+  return res.status(404).json({ message: 'Not Bloody Found' });
 });
 
 let server;

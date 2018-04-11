@@ -126,13 +126,14 @@ function renderWines(wines) {
   var listItems = '';
 
 	wines.map(wine => {
-		let hrefStr = "view-wine.html?id=" + wine.wineId;
+		let hrefView = "view-wine.html?id=" + wine.wineId;
+
 	  listItems += 
 	  				`<tr>
-              <td><a href="${hrefStr}">${wine.name}</a></td>
+              <td><a href="${hrefView}">${wine.name}</a></td>
               <td>${wine.type}</td>
               <td>${wine.cost}</td>
-              <td><i class="fa fa-plus" aria-hidden="true"></i></td>
+              <td><a href="${hrefView}"><i class="fa fa-plus" aria-hidden="true"></i></a></td>
             </tr>`;
 	});
 

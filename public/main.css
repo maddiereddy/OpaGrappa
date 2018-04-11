@@ -268,6 +268,7 @@ footer {
   height: 30px;
   color: gainsboro;
   position: relative;
+  outline-color: firebrick;
 }
 
 .search-section button {
@@ -356,7 +357,6 @@ tbody td a:visited {
   background-color: dimgray;
   color: magenta;
 }
-
 
   
 @media (min-width: 900px) {

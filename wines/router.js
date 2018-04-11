@@ -6,7 +6,7 @@ const passport = require('passport');
 const jwtAuth = passport.authenticate('jwt', {session: false});
 
 const router = express.Router();
-router.use(jwtAuth);
+//router.use(jwtAuth);
 
 router.get('/', (req, res) => {
   Wine
