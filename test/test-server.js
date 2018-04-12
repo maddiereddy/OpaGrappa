@@ -53,4 +53,13 @@ describe('Opa Grappa', function () {
 				expect(res).to.be.html;
 			})
 	});
+
+	it('should return response 200 and my-list.html', function() {
+		return chai.request(app)
+			.get('/my-list.html')
+			.then(function(res) {
+				expect(res).to.have.status(200);
+				expect(res).to.be.html;
+			})
+	});
 });

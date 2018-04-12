@@ -86,7 +86,8 @@ describe('/user', function () {
           .post('/users')
           .send({
             username: 1234,
-            password
+            password: "asdfghij",
+            confirmPassword: "asdfghij"
           })
           .then(() =>
             expect.fail(null, null, 'Request should not succeed')
@@ -111,7 +112,8 @@ describe('/user', function () {
           .post('/users')
           .send({
             username,
-            password: 1234
+            password: 1234,
+            confirmPassword: 1234
           })
           .then(() =>
             expect.fail(null, null, 'Request should not succeed')
@@ -136,7 +138,8 @@ describe('/user', function () {
           .post('/users')
           .send({
             username: ` ${username} `,
-            password
+            password: "asdfghij",
+            confirmPassword: "asdfghij"
           })
           .then(() =>
             expect.fail(null, null, 'Request should not succeed')
@@ -161,7 +164,8 @@ describe('/user', function () {
           .post('/users')
           .send({
             username,
-            password: ` ${password} `
+            password: ` ${password} `,
+            confirmPassword: ` ${password} `
           })
           .then(() =>
             expect.fail(null, null, 'Request should not succeed')
@@ -186,7 +190,8 @@ describe('/user', function () {
           .post('/users')
           .send({
             username: '',
-            password
+            password: "asdfghjk",
+            confirmPassword: "asdfghjk"
           })
           .then(() =>
             expect.fail(null, null, 'Request should not succeed')
@@ -211,7 +216,8 @@ describe('/user', function () {
           .post('/users')
           .send({
             username,
-            password: '1234567'
+            password: '1234567',
+            confirmPassword: '1234567'
           })
           .then(() =>
             expect.fail(null, null, 'Request should not succeed')
@@ -231,12 +237,14 @@ describe('/user', function () {
           });
       });
       it('Should reject users with password greater than 72 characters', function () {
+        let password = new Array(73).fill('a').join('');
         return chai
           .request(app)
           .post('/users')
           .send({
             username,
-            password: new Array(73).fill('a').join(''),
+            password: password,
+            confirmPassword: password
           })
           .then(() =>
             expect.fail(null, null, 'Request should not succeed')
@@ -265,7 +273,8 @@ describe('/user', function () {
             // Try to create a second user with the same username
             chai.request(app).post('/users').send({
               username,
-              password
+              password: "asdfghjkla",
+              confirmPassword: "asdfghjkla",
             })
           )
           .then(() =>
@@ -290,8 +299,9 @@ describe('/user', function () {
           .request(app)
           .post('/users')
           .send({
-            username,
-            password
+            username: username,
+            password: password,
+            confirmPassword: password
           })
           .then(res => {
             expect(res).to.have.status(201);
@@ -313,39 +323,6 @@ describe('/user', function () {
           });
       });
     });  
-    describe('GET', function () {
-      it('Should return an empty array initially', function () {
-        return chai.request(app).get('/users').then(res => {
-          expect(res).to.have.status(200);
-          expect(res.body).to.be.an('array');
-          expect(res.body).to.have.length(0);
-        });
-      });
-      it('Should return an array of users', function () {
-        return User.create(
-          {
-            username,
-            password
-          },
-          {
-            username: usernameB,
-            password: passwordB
-          }
-        )
-          .then(() => chai.request(app).get('/users'))
-          .then(res => {
-            expect(res).to.have.status(200);
-            expect(res.body).to.be.an('array');
-            expect(res.body).to.have.length(2);
-            expect(res.body[0]).to.deep.equal({
-              username
-            });
-            expect(res.body[1]).to.deep.equal({
-              username: usernameB
-            });
-          });
-      });
-    });
-
+    
   });
 });
