@@ -6,12 +6,12 @@ const passport = require('passport');
 const jwtAuth = passport.authenticate('jwt', {session: false});
 
 const router = express.Router();
-//router.use(jwtAuth);
+router.use(jwtAuth);
 
 // get list
 router.get('/', (req, res) => {
   MyList
-    .find()
+    .find({"userId": req.user.username})
     .then(wines => {
       res.json(wines.map(wine => wine.serialize()));
     })
@@ -59,7 +59,6 @@ router.post('/', jsonParser, (req, res) => {
       }
     return {userId, wineId, name, description, cost, rating, type, region, state, winery, comments};
   }).then(newItem => {
-    console.log(newItem);
     return MyList.create(newItem);
   }).then( created => {
     return res.status(201).json(created.serialize());
@@ -72,6 +71,7 @@ router.post('/', jsonParser, (req, res) => {
 
 // update item by id
 router.put('/:id', jsonParser, (req, res) => {
+
   if (!(req.params.id && req.body.id && req.params.id === req.body.id)) {
     res.status(400).json({
       error: 'Request path id and request body id values must match'
@@ -96,13 +96,17 @@ router.put('/:id', jsonParser, (req, res) => {
 });
 
 // delete item by id
-router.delete('/:id', (req, res) => {
+router.delete('/:id', jsonParser, (req, res) => {
+  console.log(`id: ${req.params.id}`);
+
   MyList
     .findByIdAndRemove(req.params.id)
-    .then(() => res.status(204).end())
+    .then(() => {
+      res.status(204).json({ message: 'success' });
+    })
     .catch(err => {
       console.error(err);
-      res.status(500).json({ error: 'Internal server error: DELETE/:id' });
+      res.status(500).json({ message: 'Internal server error: DELETE' });
     });
 });
 

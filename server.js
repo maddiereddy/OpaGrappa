@@ -51,7 +51,7 @@ app.use('/users/', usersRouter);
 app.use('/auth/', authRouter);
 
 app.use('*', (req, res) => {
-  return res.status(404).json({ message: 'Not Bloody Found' });
+  return res.status(404).json({ message: 'Not Found' });
 });
 
 let server;

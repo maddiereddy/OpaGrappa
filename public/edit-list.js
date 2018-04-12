@@ -8,38 +8,53 @@ $('.wine-details-section').submit(function(event) {
 	event.preventDefault();
 
   wineObj.comments = $("#wine-comments").val();
-  wineObj.userId = user; 
 
   const settings = {
-    url: '/mylist',
-    headers: { 'Authorization': `Bearer ${token}` },
+    url: `/mylist/${wineObj.id}`,
     data: JSON.stringify(wineObj),
-    method: 'POST',
+    method: 'PUT',
+    headers: { 'Authorization': `Bearer ${token}` },
     contentType: "application/json",
     success: function(wine) {
       window.location.href = 'my-list.html';
     },
     error: function(data) {
-      console.log("Error: API could not create a new list item.");
-      //alert(data.responseJSON.location + " error: " + data.responseJSON.message);
+      console.log("Error: API could not update list item.");
     }
   };
   $.ajax(settings);
 })
 
+$("#delete-button").click(function(event) {
+  event.preventDefault();
+
+  const settings = {
+    url: `/mylist/${wineObj.id}`,
+    method: 'DELETE',
+    headers: { 'Authorization': `Bearer ${token}` },
+    contentType: "application/json",
+    success: function(wine) {
+      window.location.href = 'my-list.html';
+    },
+    error: function(data) {
+      console.log("Error: API could not delete list item.");
+    }
+  };
+  $.ajax(settings);
+});
+
 $("#back-button").click(function() {
 	window.history.back();
 });
 
-function getDetails(wineId) {
+function getDetails(id) {
 	const settings = {
-    url: `/wines/${wineId}`,
+    url: `/mylist/${id}`,
     headers: { 'Authorization': `Bearer ${token}` },
-    contentType: '"application/json"',
+    dataType: 'json',
     type: 'GET',
     success: function(wine) {
     	wineObj = wine;
-    	wineObj.wineId = wineId;
 
       renderDetails();
     },
@@ -60,6 +75,7 @@ function renderDetails() {
 	$("#wine-price").val(wineObj.cost);
 	$("#wine-points").val(wineObj.rating);
 	$("#wine-description").text(wineObj.description);
+  $("#wine-comments").text(wineObj.comments);
 }
 
 $(function() {

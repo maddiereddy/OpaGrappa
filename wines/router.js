@@ -6,7 +6,7 @@ const passport = require('passport');
 const jwtAuth = passport.authenticate('jwt', {session: false});
 
 const router = express.Router();
-//router.use(jwtAuth);
+router.use(jwtAuth);
 
 router.get('/', (req, res) => {
   Wine
@@ -21,7 +21,6 @@ router.get('/', (req, res) => {
 });
 
 router.get('/states', (req, res) => {
-  //res.sendFile(__dirname + '/public/views/index.html');
   Wine
     .distinct('province')
     .then(states => {
@@ -34,7 +33,6 @@ router.get('/states', (req, res) => {
 });
 
 router.get('/regions/:state', (req, res) => {
-  //res.sendFile(__dirname + '/public/views/index.html');
   Wine
     .distinct('region_2', {'province': req.params.state})
     .then(regions => {
@@ -47,7 +45,6 @@ router.get('/regions/:state', (req, res) => {
 });
 
 router.get('/wineries/:region', (req, res) => {
-  //res.sendFile(__dirname + '/public/views/index.html');
   Wine
     .distinct('winery', {'region_2': req.params.region})
     .then(wineries => {
@@ -60,7 +57,6 @@ router.get('/wineries/:region', (req, res) => {
 });
 
 router.get('/list/:winery', (req, res) => {
-  //res.sendFile(__dirname + '/public/views/index.html');
   Wine
     .find({'winery': req.params.winery})
     .then(wines => {

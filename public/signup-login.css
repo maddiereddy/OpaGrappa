@@ -10,7 +10,7 @@ form {
   width: 40%;
   padding: 20px 50px 20px 50px;
   border-radius: 3px;
-  background: whitesmoke;
+  background-color: whitesmoke;
 }
 
 form legend {
@@ -55,14 +55,14 @@ button[type="submit"], button[type="button"] {
   cursor: pointer;
 }
 
-#back-button {
+#back-button, #edit-button, #delete-button {
   float: left;
-  margin: 0 15%;
+  margin: 10px 6%;
 }
 
 #add-button {
   float: right;
-  margin: 0 15%;
+  margin: 10px 15%;
 }
 
 button[type="submit"]:hover,
@@ -117,7 +117,7 @@ button a {
   font-family: sans-serif;
   border: 3px solid firebrick;
   padding: 20px;
-  background-color: lightgray;
+  background-color: whitesmoke;
 }
 
 .wine-details-section legend {

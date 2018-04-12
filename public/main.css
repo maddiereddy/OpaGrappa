@@ -38,7 +38,7 @@ html, body {
 }
 
 body {
-  background-color: lightgray;
+  background-color: whitesmoke;
   font-family: 'Barlow', sans-serif;
 }
 
@@ -283,7 +283,7 @@ footer {
 }
 
 .search-section button:hover {
-  background-color: lightgray;
+  background-color: whitesmoke;
   color: firebrick;
   border: 3px solid firebrick;
 }
@@ -324,6 +324,7 @@ tbody td a:visited {
   background-color: firebrick;
   text-align: center;
   color: gainsboro;
+  cursor: pointer;
 }
 
 .wines-table td {
@@ -341,11 +342,11 @@ tbody td a:visited {
 }
 
 .wines-table tr:nth-child(even) {
-  background-color: gainsboro;
+  background-color: whitesmoke;
 }
 
 .wines-table tr:nth-child(odd) {
-  background-color: lightgray;
+  background-color: gainsboro;
 }
 
 .wines-table tr:hover {
