@@ -1,0 +1,19 @@
+1. Mongo import json file to db on cmd (root) (NOT mongo shell): 
+
+mongoimport --db opagrappa --collection wines --file ~/Desktop/Thinkful/NodeJS/winemag-data-130k-v2.json --jsonArray
+
+2. Move subset of collection to another collection:
+
+db.wines.aggregate([ 
+	{ $match : {
+		"country": "US", 
+		"region_2": { $ne: null } 
+	} }, 
+	{ $out : 'wines_us' } 
+])
+
+3. Get fields of a collection: 
+
+db.wines_us.find({}).limit(1).map(docs  => Object.keys(docs))
+
+4. db.createCollections("my_list")

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>OpaGrappa</title>
+    <meta name="description" content="Wine tracking app that keeps a list of all wines consumed by user">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Barlow|Montserrat|Julee" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./normalize.css">
+    <link rel="stylesheet" href="./main.css">
+  </head>
+  <body class="hidden">
+    <header id="signup-login">
+      <nav>
+        <ul class="signup-login-list">
+          <li class="caption-list-item">
+            <h1>Opa! Grappa!!</h1>
+          </li>
+          <li class="signup-login-list-item">
+            <a href="index.html" class="logout">Log Out</a>
+          </li>
+          <li class="signup-login-list-item">
+            <a href="my-list.html">My List</a>
+          </li>
+        <ul>
+      </nav>
+    </header>
+    <main role="main" class="dashboard-main">
+      <form>
+        <fieldset id="search" class="search-section">
+          <legend>Search</legend>
+          <select class="state-select" name="state" >
+            <option value="0">Select state:</option>
+          </select>
+          <select class="region-select" name="region" >
+            <option value="0">Select region:</option>
+          </select>
+          <select class="winery-select" name="winery" >
+            <option value="0">Select vineyard/winery:</option>
+          </select>
+           <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+        </fieldset>
+      </form>
+      <section class="table-section">
+        <table class="wines-table">
+          <caption>Search Results</caption>
+          <thead>
+            <tr>
+              <th id="name-header" class="absorbing-column">Name</th>
+              <th id="type-header">Type</th>
+              <th id="cost-header">Price</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody class="table-body">
+             <tr>
+              <td>Sample name</td>
+              <td>Sample type</td>
+              <td>Sample price</td>
+              <td><i class="fa fa-plus" aria-hidden="true"></i></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+    <footer role="contentinfo">
+      <section class="footer-copyright">
+        <p>
+          <i class="fa fa-copyright" aria-hidden="true"></i> OpaGrappa 2018 by Maddie Rajavasireddy
+        </p>
+      </section>
+      <section class="footer-contact">
+        <a href="https://github.com/maddiereddy/OpaGrappa" title="Check out my code on GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>
+        <a href="mailto:maddiereddy@gmail.com?Subject=Hello" title="Send me an email"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+      </section>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <script src="./dashboard.js"></script>
+  </body>
+</html>
