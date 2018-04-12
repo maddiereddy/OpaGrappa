@@ -15,3 +15,5 @@ db.wines.aggregate([
 3. Get fields of a collection: 
 
 db.wines_us.find({}).limit(1).map(docs  => Object.keys(docs))
+
+4. db.createCollections("my_list")
