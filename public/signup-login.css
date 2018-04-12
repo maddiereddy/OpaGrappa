@@ -1,0 +1,169 @@
+
+fieldset {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+form {
+	margin: 110px auto;
+  width: 40%;
+  padding: 20px 50px 20px 50px;
+  border-radius: 3px;
+  background-color: whitesmoke;
+}
+
+form legend {
+  width: 100%;
+  line-height: 38px;
+  font-size: 35px;
+  font-weight: 300;
+  color: #565656;
+  text-align: center;
+  letter-spacing: 0;
+  margin: 0 auto 10px;
+}
+
+form p {
+  margin-top: 10px;
+  text-align: center;
+}
+
+input, textarea, button[type="submit"], button[type="button"] {
+  display: block;
+  width: 100%;
+  height: auto;
+  font-size: 18px;
+  text-align: left;
+  padding: 12px;
+  border: 2px solid firebrick;
+  border-radius: 12px;
+  background: #fcfcfc;
+  margin: 10px auto 20px;
+  transition: opacity 0.4s;
+  outline-color: firebrick;
+}
+
+button[type="submit"], button[type="button"] {
+  height: auto;
+  font-size: 22px;
+  font-weight: 500;
+  text-align: center;
+  color: white;
+  background-color: firebrick;
+  border: 0;
+  cursor: pointer;
+}
+
+#back-button, #edit-button, #delete-button {
+  float: left;
+  margin: 10px 6%;
+}
+
+#add-button {
+  float: right;
+  margin: 10px 15%;
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:focus,
+button[type="button"]:hover,
+button[type="button"]:focus {
+  background-color: maroon;
+  -webkit-transition: background 0.1s;
+  -moz-transition: background 0.1s;
+  -o-transition: background 0.1s;
+  transition: background 0.1s;
+}
+
+button.delete {
+  background: #cd8613; 
+}
+
+button.delete:hover,
+button.delete:focus {
+  background-color: #cd6f11;
+  -webkit-transition: background 0.1s;
+  -moz-transition: background 0.1s;
+  -o-transition: background 0.1s;
+  transition: background 0.1s;
+}
+
+button a {
+  text-decoration: none;
+  color: white;
+}
+
+#signup {
+  width: 100px;
+}
+
+.setup-form, .wine-details-section {
+	width: 50%;
+	border: 2px solid firebrick;
+	border-radius: 10px;
+}
+
+.switch a {
+  color: firebrick;
+}
+
+.wine-details-section {
+  width: 70%;
+  margin: 100px 15% 50px 15%;
+  height: 600px;
+  border-radius: 10px;
+  font-size: 1em;
+  font-family: sans-serif;
+  border: 3px solid firebrick;
+  padding: 20px;
+  background-color: whitesmoke;
+}
+
+.wine-details-section legend {
+  font-size: 1.5em;
+  font-weight: bolder;
+  color: firebrick;
+  padding: 2px 0px ;
+}
+
+.wine-details-section label {
+  font-size: 1em;
+  color: firebrick;
+  font-weight: bolder;
+}
+
+.wine-details-section input[type="text"], 
+.wine-details-section textarea {
+  background-color: gainsboro;
+  font-size: 13px;
+  line-height: 18px;
+  height: 30px;
+  border: 1px solid silver;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.wine-details-section textarea {
+  height: 60px;
+  resize: none;
+  overflow: auto;
+}  
+
+.wine-details-section button {
+  width: 150px;
+  color: gainsboro;
+  font-size: 1.2em;
+  padding: 8px;
+  margin-top: 20px;
+}
+
+.half-width {
+  width: 48%;
+  float: left;
+}
+
+.right {
+  float: right;
+}

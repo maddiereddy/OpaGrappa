@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="description" content="Wine tracking app that keeps a list of all wines consumed by user">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OpaGrappa</title>
+    <link href="https://fonts.googleapis.com/css?family=Barlow|Montserrat|Julee" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="signup-login.css">
+  </head>
+  <body>
+  	<header>
+      <h1>Opa! Grappa!!</h1>
+    </header>
+
+    <form role="form" class="setup-form">
+      <fieldset>
+        <legend>Login</legend>
+        <label for="username">Email</label>
+        <input type="email" placeholder="username" name="username" id="username" required/>
+        <label for="password">Password</label>
+        <input placeholder="password" type="password" name="password" id="password" required/>
+        <button id="signup" type="submit">Login</button>
+
+        <p class="switch">Don't have an account? <a href="signup.html"> Create one here!</a></p>
+      </fieldset>
+    </form>  
+
+    <footer role="contentinfo">
+      <section class="footer-copyright">
+        <p>
+          <i class="fa fa-copyright" aria-hidden="true"></i> OpaGrappa 2018 by Maddie Rajavasireddy
+        </p>
+      </section>
+      <section class="footer-contact">
+        <a href="https://github.com/maddiereddy/OpaGrappa" title="Check out my code on GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>
+        <a href="mailto:maddiereddy@gmail.com?Subject=Hello" title="Send me an email"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+      </section>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="login.js"></script>
+  </body>
+</html>

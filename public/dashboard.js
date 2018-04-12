@@ -1,0 +1,274 @@
+let user = localStorage.getItem('user');
+let token = localStorage.getItem('token');
+let listData = {};
+let toggleName = true;
+let toggleType = true;
+let toggleCost = true;
+
+$(".logout").click(function(e) {
+	console.log('you clicked logout!');
+	localStorage.clear();
+	user = null;
+	window.location.reload(true);
+});
+
+function getStates() {
+  const settings = {
+    url: '/wines/states',
+    headers: { 'Authorization': `Bearer ${token}` },
+    dataType: 'json',
+    type: 'GET',
+    success: function(states) {
+      renderStates(states);
+    },
+    error: function(data) {
+      console.log("Error: API could not answer your get request.");
+    }
+  };
+  $.ajax(settings);
+}
+
+function renderStates(states) {
+  var listItems = '';
+	states.map(state => {
+	  listItems += '<option value=' + state + '>' + state + '</option>';
+	});
+	$('.state-select').append(listItems);
+}
+
+$('.state-select').change(function() {
+	var state = $('.state-select option:selected').text();
+
+  localStorage.setItem('state', state);
+	getRegions(state);
+});
+
+function getRegions(state) {
+  const settings = {
+    url: `/wines/regions/${state}`,
+    headers: { 'Authorization': `Bearer ${token}` },
+    dataType: 'json',
+    type: 'GET',
+    success: function(regions) {
+      renderRegions(regions);
+    },
+    error: function(data) {
+      console.log("Error: API could not answer your get request.");
+    }
+  };
+  $.ajax(settings);
+}
+
+function renderRegions(regions) {
+  var listItems = '';
+
+	regions.map(region => {
+	  listItems += '<option value=' + region + '>' + region + '</option>';
+	});
+
+	$('.region-select').html('');
+	$('.region-select').append('<option value="0">Select region:</option>');
+	$('.region-select').append(listItems);
+}
+
+$('.region-select').change(function() {
+	var region = $('.region-select option:selected').text();
+
+  localStorage.setItem('region', region);
+	getWineries(region);
+});
+
+function getWineries(region) {
+  const settings = {
+    url: `/wines/wineries/${region}`,
+    headers: { 'Authorization': `Bearer ${token}` },
+    dataType: 'json',
+    type: 'GET',
+    success: function(wineries) {
+      renderWineries(wineries);
+    },
+    error: function(data) {
+      console.log("Error: API could not answer your get request.");
+    }
+  };
+  $.ajax(settings);
+}
+
+function renderWineries(wineries) {
+  var listItems = '';
+
+	wineries.map(winery => {
+	  listItems += '<option value=' + winery + '>' + winery + '</option>';
+	});
+
+	$('.winery-select').html('');
+	$('.winery-select').append('<option value="0">Select vineyard/winery:</option>');
+	$('.winery-select').append(listItems);
+}
+
+$('.winery-select').change(function() {
+	var winery = $('.winery-select option:selected').text();
+
+  localStorage.setItem('winery', winery);
+	getWines(winery);
+});
+
+function getWines(winery) {
+  const settings = {
+    url: `/wines/list/${winery}`,
+    headers: { 'Authorization': `Bearer ${token}` },
+    dataType: 'json',
+    type: 'GET',
+    success: function(wines) {
+      listData = wines;
+      renderWines(wines, "name", toggleName);
+    },
+    error: function(data) {
+      console.log("Error: API could not answer your get request.");
+    }
+  };
+  $.ajax(settings);
+}
+
+function renderWines(wines, sort, asc) {
+  var listItems = '';
+
+  wines.sort(compareValues(sort, asc));
+  listData = wines;
+
+	wines.map(wine => {
+		let hrefView = "view-wine.html?id=" + wine.wineId;
+
+	  listItems += 
+		`<tr>
+      <td><a href="${hrefView}">${wine.name}</a></td>
+      <td>${wine.type}</td>
+      <td>${wine.cost}</td>
+      <td><a href="${hrefView}"><i class="fa fa-plus" aria-hidden="true"></i></a></td>
+    </tr>`;
+	});
+
+	$('.table-body').html('');
+	$('.table-body').append(listItems);
+}
+
+function getDefaultList() {
+  const settings = {
+    url: '/wines',
+    headers: { 'Authorization': `Bearer ${token}` },
+    dataType: 'json',
+    type: 'GET',
+    success: function(wines) {
+      listData = wines;
+      renderList(wines, "name", toggleName);
+    },
+    error: function(data) {
+      console.log("Error: API could not answer your get request.");
+    }
+  };
+  $.ajax(settings);
+}
+
+function renderList(wines, sort, asc) {
+  var listItems = '';
+
+  wines.sort(compareValues(sort, asc));
+  listData = wines;
+
+  wines.map(wine => {
+    let hrefView = "view-wine.html?id=" + wine.wineId;
+
+    listItems += 
+    `<tr>
+      <td><a href="${hrefView}">${wine.name}</a></td>
+      <td>${wine.type}</td>
+      <td>${wine.cost}</td>
+      <td><a href="${hrefView}"><i class="fa fa-plus" aria-hidden="true"></i></a></td>
+    </tr>`;
+  });
+
+  $('.table-body').html('');
+  $('.table-body').append(listItems);
+}
+
+$("#name-header").click(function(e) {
+  renderWines(listData, "name", toggleName);
+  toggleName = !toggleName;
+});
+
+$("#type-header").click(function(e) {
+  renderWines(listData, "type", toggleType);
+  toggleType = !toggleType;
+});
+
+$("#cost-header").click(function(e) {
+  renderWines(listData, "cost", toggleCost);
+  toggleCost = !toggleCost;
+});
+
+// function for dynamic sorting
+function compareValues(key, order) {
+  return function(a, b) {
+    if(!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
+      // property doesn't exist on either object
+        return 0; 
+    }
+
+    const varA = (typeof a[key] === 'string') ? 
+      a[key].toUpperCase() : a[key];
+    const varB = (typeof b[key] === 'string') ? 
+      b[key].toUpperCase() : b[key];
+
+    let comparison = 0;
+    if (varA > varB) {
+      comparison = 1;
+    } else if (varA < varB) {
+      comparison = -1;
+    }
+    return (
+      (order) ? comparison : (comparison * -1)
+    );
+  };
+}
+
+
+$(function() {
+	//if token is null, then user NOT logged in, so direct them to login
+	if ((token === null) || (user === null)) {
+		window.location.href = "/login.html";
+	} else {
+		$('body').toggleClass("hidden");
+	}
+
+  getStates();
+
+  if ((localStorage.getItem('state') === null) && (localStorage.getItem('region') === null) && (localStorage.getItem('winery') === null)) {
+    getDefaultList();  
+  } else {
+    getRegions(localStorage.getItem('state'));
+    getWineries(localStorage.getItem('region'));
+    getWines(localStorage.getItem('winery'));
+
+    // $('.select-state option[value="California"]').attr('selected','selected');
+
+    // $('select[name="state"] > option').eq("California").attr('selected','selected');
+    // $('select[name="region"]').find(`option[value="${localStorage.getItem('region')}"]`).attr("selected","selected");
+    // $('select[name="winery"]').find(`option[value="${localStorage.getItem('winery')}"]`).attr("selected","selected");
+    
+  }
+    
+  // Change the selector if needed
+	var $table = $('table'),
+	    $bodyCells = $table.find('tbody tr:first').children(),
+	    colWidth;
+
+	// Get the tbody columns width array
+	colWidth = $bodyCells.map(function() {
+	    return $(this).width();
+	}).get();
+
+	// Set the width of thead columns
+	$table.find('thead tr').children().each(function(i, v) {
+	    $(v).width(colWidth[i]);
+	});    
+})
