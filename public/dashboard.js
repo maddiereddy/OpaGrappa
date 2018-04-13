@@ -35,7 +35,7 @@ function renderStates(states) {
 	});
 	$('.state-select').append(listItems);
 
-  if ((localStorage.getItem('state') !== null)
+  if (localStorage.getItem('state') !== null)
     $(`.state-select option[value="${localStorage.getItem('state')}"]`).attr('selected','selected');
 }
 
@@ -73,7 +73,7 @@ function renderRegions(regions) {
 	$('.region-select').append('<option value="0">Select region:</option>');
 	$('.region-select').append(listItems);
 
-  if ((localStorage.getItem('region') !== null)
+  if (localStorage.getItem('region') !== null)
     $(`.region-select option[value="${localStorage.getItem('region')}"]`).attr('selected','selected');
 }
 
@@ -111,7 +111,7 @@ function renderWineries(wineries) {
 	$('.winery-select').append('<option value="0">Select vineyard/winery:</option>');
 	$('.winery-select').append(listItems);
 
-  if ((localStorage.getItem('winery') !== null)
+  if (localStorage.getItem('winery') !== null)
     $(`.winery-select option[value="${localStorage.getItem('winery')}"]`).attr('selected','selected');
 }
 
