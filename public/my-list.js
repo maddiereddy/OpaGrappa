@@ -74,7 +74,7 @@ function getList() {
 }
 
 function renderList(wines, sort, asc) {
-  var listItems = '';
+  let listItems = [];
 
 	wines.sort(compareValues(sort, asc));
   listData = wines;
@@ -82,13 +82,12 @@ function renderList(wines, sort, asc) {
 	wines.map(wine => {
 		let hrefView = "edit-list.html?id=" + wine.id;
 
-	  listItems += 
-  		`<tr>
+	  listItems.push(`<tr>
         <td><a href="${hrefView}">${wine.name}</a></td>
         <td>${wine.type}</td>
         <td>${wine.cost}</td>
         <td><a href="${hrefView}"><i class="fa fa-times" aria-hidden="true"></i></a></td>
-      </tr>`;
+      </tr>`);
 	});
 
 	$('.table-body').html('');
@@ -112,7 +111,7 @@ $(function() {
 
 	// Get the tbody columns width array
 	colWidth = $bodyCells.map(function() {
-	    return $(this).width();
+	  return $(this).width();
 	}).get();
 
 	// Set the width of thead columns

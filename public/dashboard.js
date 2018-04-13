@@ -29,10 +29,12 @@ function getStates() {
 }
 
 function renderStates(states) {
-  var listItems = '';
+  let listItems = [];
+
 	states.map(state => {
-	  listItems += `<option value="${state}">${state}</option>`;
+	  listItems.push(`<option value="${state}">${state}</option>`);
 	});
+  
 	$('.state-select').append(listItems);
 
   if (localStorage.getItem('state') !== null)
@@ -63,10 +65,10 @@ function getRegions(state) {
 }
 
 function renderRegions(regions) {
-  var listItems = '';
+  let listItems = [];
 
 	regions.map(region => {
-	  listItems += `<option value="${region}">${region}</option>`;
+	  listItems.push(`<option value="${region}">${region}</option>`);
 	});
 
 	$('.region-select').html('');
@@ -101,10 +103,10 @@ function getWineries(region) {
 }
 
 function renderWineries(wineries) {
-  var listItems = '';
+  let listItems = [];
 
 	wineries.map(winery => {
-	  listItems += `<option value="${winery}">${winery}</option>`;
+	  listItems.push(`<option value="${winery}">${winery}</option>`);
 	});
 
 	$('.winery-select').html('');
@@ -140,7 +142,7 @@ function getWines(winery) {
 }
 
 function renderWines(wines, sort, asc) {
-  var listItems = '';
+  let listItems = [];
 
   wines.sort(compareValues(sort, asc));
   listData = wines;
@@ -148,13 +150,12 @@ function renderWines(wines, sort, asc) {
 	wines.map(wine => {
 		let hrefView = "view-wine.html?id=" + wine.wineId;
 
-	  listItems += 
-		`<tr>
+	  listItems.push( `<tr>
       <td><a href="${hrefView}">${wine.name}</a></td>
       <td>${wine.type}</td>
       <td>${wine.cost}</td>
       <td><a href="${hrefView}"><i class="fa fa-plus" aria-hidden="true"></i></a></td>
-    </tr>`;
+    </tr>`);
 	});
 
 	$('.table-body').html('');
@@ -179,7 +180,7 @@ function getDefaultList() {
 }
 
 function renderList(wines, sort, asc) {
-  var listItems = '';
+  let listItems = [];
 
   wines.sort(compareValues(sort, asc));
   listData = wines;
@@ -187,13 +188,12 @@ function renderList(wines, sort, asc) {
   wines.map(wine => {
     let hrefView = "view-wine.html?id=" + wine.wineId;
 
-    listItems += 
-    `<tr>
+    listItems.push(`<tr>
       <td><a href="${hrefView}">${wine.name}</a></td>
       <td>${wine.type}</td>
       <td>${wine.cost}</td>
       <td><a href="${hrefView}"><i class="fa fa-plus" aria-hidden="true"></i></a></td>
-    </tr>`;
+    </tr>`);
   });
 
   $('.table-body').html('');

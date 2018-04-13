@@ -21,7 +21,6 @@ $('.wine-details-section').submit(function(event) {
     },
     error: function(data) {
       console.log("Error: API could not create a new list item.");
-      //alert(data.responseJSON.location + " error: " + data.responseJSON.message);
     }
   };
   $.ajax(settings);
