@@ -31,9 +31,12 @@ function getStates() {
 function renderStates(states) {
   var listItems = '';
 	states.map(state => {
-	  listItems += '<option value=' + state + '>' + state + '</option>';
+	  listItems += `<option value="${state}">${state}</option>`;
 	});
 	$('.state-select').append(listItems);
+
+  if ((localStorage.getItem('state') !== null)
+    $(`.state-select option[value="${localStorage.getItem('state')}"]`).attr('selected','selected');
 }
 
 $('.state-select').change(function() {
@@ -63,12 +66,15 @@ function renderRegions(regions) {
   var listItems = '';
 
 	regions.map(region => {
-	  listItems += '<option value=' + region + '>' + region + '</option>';
+	  listItems += `<option value="${region}">${region}</option>`;
 	});
 
 	$('.region-select').html('');
 	$('.region-select').append('<option value="0">Select region:</option>');
 	$('.region-select').append(listItems);
+
+  if ((localStorage.getItem('region') !== null)
+    $(`.region-select option[value="${localStorage.getItem('region')}"]`).attr('selected','selected');
 }
 
 $('.region-select').change(function() {
@@ -98,12 +104,15 @@ function renderWineries(wineries) {
   var listItems = '';
 
 	wineries.map(winery => {
-	  listItems += '<option value=' + winery + '>' + winery + '</option>';
+	  listItems += `<option value="${winery}">${winery}</option>`;
 	});
 
 	$('.winery-select').html('');
 	$('.winery-select').append('<option value="0">Select vineyard/winery:</option>');
 	$('.winery-select').append(listItems);
+
+  if ((localStorage.getItem('winery') !== null)
+    $(`.winery-select option[value="${localStorage.getItem('winery')}"]`).attr('selected','selected');
 }
 
 $('.winery-select').change(function() {
@@ -248,13 +257,6 @@ $(function() {
     getRegions(localStorage.getItem('state'));
     getWineries(localStorage.getItem('region'));
     getWines(localStorage.getItem('winery'));
-
-    // $('.select-state option[value="California"]').attr('selected','selected');
-
-    // $('select[name="state"] > option').eq("California").attr('selected','selected');
-    // $('select[name="region"]').find(`option[value="${localStorage.getItem('region')}"]`).attr("selected","selected");
-    // $('select[name="winery"]').find(`option[value="${localStorage.getItem('winery')}"]`).attr("selected","selected");
-    
   }
     
   // Change the selector if needed
