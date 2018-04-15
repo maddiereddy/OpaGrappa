@@ -154,12 +154,54 @@ function renderWines(wines, sort, asc) {
       <td><a href="${hrefView}">${wine.name}</a></td>
       <td>${wine.type}</td>
       <td>${wine.cost}</td>
-      <td><a href="${hrefView}"><i class="fa fa-plus" aria-hidden="true"></i></a></td>
+      <td><button type="button" class="fa-button" id=${wine.wineId}><i class="fa fa-plus" aria-hidden="true"></i></button></td>
     </tr>`);
 	});
 
 	$('.table-body').html('');
 	$('.table-body').append(listItems);
+}
+
+$(document).on('click', 'button.fa-button', function () { 
+  addWine(this.id);
+  return false;
+});
+
+function addWine(id){
+  const getWine = {
+    url: `/wines/${id}`,
+    headers: { 'Authorization': `Bearer ${token}` },
+    contentType: '"application/json"',
+    type: 'GET',
+    success: function(wine) {
+      listData = wine;
+      listData.comments = "";
+      listData.userId = user; 
+
+      const settings = {
+        url: '/mylist',
+        headers: { 'Authorization': `Bearer ${token}` },
+        data: JSON.stringify(listData),
+        method: 'POST',
+        contentType: "application/json",
+        success: function(newWine) {
+          alert(`Wine: ${newWine.name} has been added to your list`);
+          // window.location.reload(false);
+        },
+        error: function(data) {
+          if (data.responseJSON.code === 422) 
+            alert(`Wine: ${wine.name}. ${data.responseJSON.message}`)
+          console.log("Error: API could not create a new list item.");
+        }
+      };
+      $.ajax(settings);
+    },
+    error: function(data) {
+      console.log("Error: API could not answer your get request.");
+    }
+  };
+
+  $.ajax(getWine);
 }
 
 function getDefaultList() {
@@ -192,7 +234,7 @@ function renderList(wines, sort, asc) {
       <td><a href="${hrefView}">${wine.name}</a></td>
       <td>${wine.type}</td>
       <td>${wine.cost}</td>
-      <td><a href="${hrefView}"><i class="fa fa-plus" aria-hidden="true"></i></a></td>
+      <td><button type="button" class="fa-button" id=${wine.wineId}><i class="fa fa-plus" aria-hidden="true"></i></button></td>
     </tr>`);
   });
 

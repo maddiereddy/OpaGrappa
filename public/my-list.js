@@ -86,12 +86,33 @@ function renderList(wines, sort, asc) {
         <td><a href="${hrefView}">${wine.name}</a></td>
         <td>${wine.type}</td>
         <td>${wine.cost}</td>
-        <td><a href="${hrefView}"><i class="fa fa-times" aria-hidden="true"></i></a></td>
+        <td><button type="button" class="fa-button" id=${wine.id}><i class="fa fa-times" aria-hidden="true"></i></button></td>
       </tr>`);
 	});
 
 	$('.table-body').html('');
 	$('.table-body').append(listItems);
+}
+
+$(document).on('click', 'button.fa-button', function () { 
+  deleteWine(this.id);
+  return false;
+});
+
+function deleteWine(id) {
+  const settings = {
+    url: `/mylist/${id}`,
+    method: 'DELETE',
+    headers: { 'Authorization': `Bearer ${token}` },
+    contentType: "application/json",
+    success: function(wine) {
+      window.location.reload(true);
+    },
+    error: function(data) {
+      console.log("Error: API could not delete list item.");
+    }
+  };
+  $.ajax(settings);
 }
 
 $(function() {

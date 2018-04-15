@@ -29,7 +29,10 @@ form p {
   text-align: center;
 }
 
-input, textarea, button[type="submit"], button[type="button"] {
+input, 
+textarea, 
+button[type="submit"], 
+button[type="button"] {
   display: block;
   width: 100%;
   height: auto;
@@ -44,7 +47,8 @@ input, textarea, button[type="submit"], button[type="button"] {
   outline-color: firebrick;
 }
 
-button[type="submit"], button[type="button"] {
+button[type="submit"], 
+button[type="button"] {
   height: auto;
   font-size: 22px;
   font-weight: 500;
@@ -55,7 +59,9 @@ button[type="submit"], button[type="button"] {
   cursor: pointer;
 }
 
-#back-button, #edit-button, #delete-button {
+#back-button, 
+#edit-button, 
+#delete-button {
   float: left;
   margin: 10px 6%;
 }
@@ -70,9 +76,6 @@ button[type="submit"]:focus,
 button[type="button"]:hover,
 button[type="button"]:focus {
   background-color: maroon;
-  -webkit-transition: background 0.1s;
-  -moz-transition: background 0.1s;
-  -o-transition: background 0.1s;
   transition: background 0.1s;
 }
 
@@ -83,9 +86,6 @@ button.delete {
 button.delete:hover,
 button.delete:focus {
   background-color: #cd6f11;
-  -webkit-transition: background 0.1s;
-  -moz-transition: background 0.1s;
-  -o-transition: background 0.1s;
   transition: background 0.1s;
 }
 
@@ -98,7 +98,8 @@ button a {
   width: 100px;
 }
 
-.setup-form, .wine-details-section {
+.setup-form, 
+.wine-details-section {
 	width: 50%;
 	border: 2px solid firebrick;
 	border-radius: 10px;
@@ -114,7 +115,8 @@ button a {
   font-size: 1.2em;
 }
 
-.demo-login, .demo-account {
+.demo-login, 
+.demo-account {
   font-size: 1.2em;
   font-weight: bolder;
 }

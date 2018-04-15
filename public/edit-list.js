@@ -16,7 +16,7 @@ $('.wine-details-section').submit(function(event) {
     headers: { 'Authorization': `Bearer ${token}` },
     contentType: "application/json",
     success: function(wine) {
-      window.location.href = 'my-list.html';
+      window.location.reload(true);
     },
     error: function(data) {
       console.log("Error: API could not update list item.");

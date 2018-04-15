@@ -4,16 +4,6 @@
     border: 0;
     font-size: 100%;
     box-sizing: border-box;
-
-    /*  CHROME  */
-    -webkit-margin-before: 0px;
-    -webkit-margin-after: 0px;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;
-    -webkit-padding-before: 0px;
-    -webkit-padding-after: 0px;
-    -webkit-padding-start: 0px;
-    -webkit-padding-end: 0px;
 }
 
 hr { 
@@ -119,7 +109,8 @@ nav li a:hover:not(.active) {
   color: gainsboro;
 }
 
-.signup-login-list-item, .search-list-item {
+.signup-login-list-item, 
+.search-list-item {
   float: right;
   margin-top: 25px;
   cursor: pointer;
@@ -135,7 +126,8 @@ main {
   margin: auto;
 }
 
-.dashboard-main, .my-list-main{
+.dashboard-main, 
+.my-list-main{
   margin-top: 130px;
 }
 
@@ -143,9 +135,6 @@ main {
   height: 100%;
   width: 100%;
   background: url("./images/Landing.jpg") no-repeat right top;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
   display: table;
   top: 0;
@@ -333,7 +322,7 @@ tbody td a:visited {
 
 .wines-table td,
 .wines-table th {
-  border: 1px solid gainsboro;
+  border: 1px solid silver;
   padding: 8px;
 }
 
@@ -357,6 +346,27 @@ tbody td a:visited {
 .wines-table tr:hover a:visited {
   background-color: dimgray;
   color: magenta;
+}
+
+.wines-table .fa-button {
+  padding: 0;
+  width: 1.5em;
+  margin: 0;
+  text-align: center;
+  height: auto;
+  font-size: 22px;
+  font-weight: 500;
+  color: firebrick;
+  border: 0;
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+.wines-table .fa-button:hover,
+.wines-table .fa-button:focus {
+  background-color: gainsboro;
+  transition: background 0.2s;
 }
 
   
