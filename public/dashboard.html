@@ -31,16 +31,16 @@
       <form role="form" >
         <fieldset role="search" id="search" class="search-section">
           <legend>Search</legend>
-          <select class="state-select" name="state" >
+          <select class="state-select" name="state" aria-label="select state">
             <option value="0">Select state:</option>
           </select>
-          <select class="region-select" name="region" >
+          <select class="region-select" name="region" aria-label="select region in selected state">
             <option value="0">Select region:</option>
           </select>
-          <select class="winery-select" name="winery" >
+          <select class="winery-select" name="winery" aria-label="select winery from selected region">
             <option value="0">Select vineyard/winery:</option>
           </select>
-           <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+           <button type="submit" aria-label="search"><i class="fa fa-search" aria-hidden="true"></i></button>
         </fieldset>
       </form>
       <section role="region" class="table-section">

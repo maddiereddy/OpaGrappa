@@ -86,7 +86,7 @@ function renderList(wines, sort, asc) {
         <td><a href="${hrefView}">${wine.name}</a></td>
         <td>${wine.type}</td>
         <td>${wine.cost}</td>
-        <td><button type="button" class="fa-button" id=${wine.id}><i class="fa fa-times" aria-hidden="true"></i></button></td>
+        <td><button type="button" class="fa-button" id=${wine.id} aria-label="remove selected wine from list"><i class="fa fa-times" aria-hidden="true"></i></button></td>
       </tr>`);
 	});
 

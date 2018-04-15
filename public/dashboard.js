@@ -154,7 +154,7 @@ function renderWines(wines, sort, asc) {
       <td><a href="${hrefView}">${wine.name}</a></td>
       <td>${wine.type}</td>
       <td>${wine.cost}</td>
-      <td><button type="button" class="fa-button" id=${wine.wineId}><i class="fa fa-plus" aria-hidden="true"></i></button></td>
+      <td><button type="button" class="fa-button" id=${wine.wineId} aria-label="add selection"><i class="fa fa-plus" aria-hidden="true"></i></button></td>
     </tr>`);
 	});
 
@@ -234,7 +234,7 @@ function renderList(wines, sort, asc) {
       <td><a href="${hrefView}">${wine.name}</a></td>
       <td>${wine.type}</td>
       <td>${wine.cost}</td>
-      <td><button type="button" class="fa-button" id=${wine.wineId}><i class="fa fa-plus" aria-hidden="true"></i></button></td>
+      <td><button type="button" class="fa-button" id=${wine.wineId} aria-label="add selection"><i class="fa fa-plus" aria-hidden="true"></i></button></td>
     </tr>`);
   });
 
