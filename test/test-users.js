@@ -35,7 +35,9 @@ describe('/user', function () {
   });
 
   describe('/users', function () {
+
     describe('POST', function () {
+
       it('Should reject users with missing username', function () {
         return chai
           .request(app)
@@ -58,6 +60,7 @@ describe('/user', function () {
             expect(res.body.location).to.equal('username');
           });
       });
+
       it('Should reject users with missing password', function () {
         return chai
           .request(app)
@@ -80,6 +83,7 @@ describe('/user', function () {
             expect(res.body.location).to.equal('password');
           });
       });
+
       it('Should reject users with non-string username', function () {
         return chai
           .request(app)
@@ -106,6 +110,7 @@ describe('/user', function () {
             expect(res.body.location).to.equal('username');
           });
       });
+
       it('Should reject users with non-string password', function () {
         return chai
           .request(app)
@@ -132,6 +137,7 @@ describe('/user', function () {
             expect(res.body.location).to.equal('password');
           });
       });
+
       it('Should reject users with non-trimmed username', function () {
         return chai
           .request(app)
@@ -158,6 +164,7 @@ describe('/user', function () {
             expect(res.body.location).to.equal('username');
           });
       });
+
       it('Should reject users with non-trimmed password', function () {
         return chai
           .request(app)
@@ -184,6 +191,7 @@ describe('/user', function () {
             expect(res.body.location).to.equal('password');
           });
       });
+
       it('Should reject users with empty username', function () {
         return chai
           .request(app)
@@ -210,6 +218,7 @@ describe('/user', function () {
             expect(res.body.location).to.equal('username');
           });
       });
+
       it('Should reject users with password less than 8 characters', function () {
         return chai
           .request(app)
@@ -236,6 +245,7 @@ describe('/user', function () {
             expect(res.body.location).to.equal('password');
           });
       });
+
       it('Should reject users with password greater than 72 characters', function () {
         let password = new Array(73).fill('a').join('');
         return chai
@@ -263,6 +273,7 @@ describe('/user', function () {
             expect(res.body.location).to.equal('password');
           });
       });
+
       it('Should reject users with duplicate username', function () {
         // Create an initial user
         return User.create({
@@ -294,6 +305,7 @@ describe('/user', function () {
             expect(res.body.location).to.equal('username');
           });
       });
+      
       it('Should create a new user', function () {
         return chai
           .request(app)

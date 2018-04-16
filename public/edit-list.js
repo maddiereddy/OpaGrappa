@@ -55,7 +55,6 @@ function getDetails(id) {
     type: 'GET',
     success: function(wine) {
     	wineObj = wine;
-
       renderDetails();
     },
     error: function(data) {
@@ -78,6 +77,7 @@ function renderDetails() {
   $("#wine-comments").text(wineObj.comments);
 }
 
+
 $(function() {
   //if token is null, then user NOT logged in, so direct them to login
   if ((token === null) || (user === null)) {
@@ -85,7 +85,7 @@ $(function() {
   } else {
     $('body').toggleClass("hidden");
   }
-  
+
 	let hrefString = window.location.href;
 	var getId = new Array();
 	let getIdString = hrefString.split("?");

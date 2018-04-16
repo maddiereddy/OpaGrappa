@@ -20,6 +20,11 @@ hr {
   display: none;
 }
 
+.pinterest-button {
+  width: 50px;
+  height: 20px;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -54,6 +59,7 @@ header {
   text-align: left;
   color: firebrick;
   background-color: black;
+  border-bottom: 1px solid firebrick;
 }
 
 header h1 {
@@ -195,11 +201,18 @@ main {
   font-weight: bold;
 }
 
+.hidden-height {
+  display: block;
+  height: 100px;
+  width: 100%;
+}
+
 footer {
   bottom: 0;
   height: 50px;
   font-size: 0.8em;
   background-color: #333333;
+  position:fixed;
 }
 
 .footer-copyright {

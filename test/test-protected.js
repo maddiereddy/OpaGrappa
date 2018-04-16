@@ -40,6 +40,7 @@ describe('Protected endpoint', function () {
     return User.remove({});
   });
 
+
   describe('/protected', function () {
     it('Should reject requests with no credentials', function () {
       return chai
@@ -86,6 +87,7 @@ describe('Protected endpoint', function () {
           expect(res).to.have.status(401);
         });
     });
+
     it('Should reject requests with an expired token', function () {
       const token = jwt.sign(
         {
@@ -117,6 +119,7 @@ describe('Protected endpoint', function () {
           expect(res).to.have.status(401);
         });
     });
+    
     it('Should send protected data', function () {
       const token = jwt.sign(
         {
