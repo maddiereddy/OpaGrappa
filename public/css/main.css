@@ -140,7 +140,7 @@ main {
 .learn-more-section {
   height: 100%;
   width: 100%;
-  background: url("./images/Landing.jpg") no-repeat right top;
+  background: url("../images/Landing.jpg") no-repeat right top;
   background-size: cover;
   display: table;
   top: 0;
