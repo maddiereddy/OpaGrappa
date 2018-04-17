@@ -4,6 +4,7 @@ let user = localStorage.getItem('user');
 let token = localStorage.getItem('token');
 let wineObj = {};
 
+// add or edit comments on selected wine from list
 $('.wine-details-section').submit(function(event) {
 	event.preventDefault();
 
@@ -25,6 +26,7 @@ $('.wine-details-section').submit(function(event) {
   $.ajax(settings);
 })
 
+// delete selected wine from list
 $("#delete-button").click(function(event) {
   event.preventDefault();
 
@@ -43,10 +45,12 @@ $("#delete-button").click(function(event) {
   $.ajax(settings);
 });
 
+// go back
 $("#back-button").click(function() {
 	window.history.back();
 });
 
+// get details of selected wine
 function getDetails(id) {
 	const settings = {
     url: `/mylist/${id}`,
@@ -65,6 +69,7 @@ function getDetails(id) {
 
 }
 
+// populate form fields
 function renderDetails() {
 	$("#wine-title").val(wineObj.name);
 	$("#wine-type").val(wineObj.type);

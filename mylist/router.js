@@ -46,6 +46,7 @@ router.post('/', jsonParser, (req, res) => {
     });
   }
 
+  // check if selected wine already on the user's list; if not, the create entry
   let {userId, wineId, name, description, cost, rating, type, region, state, winery, comments} = req.body;
   return MyList.find({userId, wineId, name})
     .count()
@@ -69,7 +70,7 @@ router.post('/', jsonParser, (req, res) => {
 
 });
 
-// update item by id
+// update item  with new comment by id
 router.put('/:id', jsonParser, (req, res) => {
 
   if (!(req.params.id && req.body.id && req.params.id === req.body.id)) {

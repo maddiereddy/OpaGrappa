@@ -51,11 +51,12 @@ const WineSchema = mongoose.Schema({
   }
 });
 
-
+// format price with prefix '$'' sign and call the field 'cost'
 WineSchema.virtual('cost').get(function() {
     return (`$${this.price}`);
 });
 
+// format points with suffix 'pts' and cak the field 'rating'
 WineSchema.virtual('rating').get(function() {
     return (`${this.points} pts`);
 });

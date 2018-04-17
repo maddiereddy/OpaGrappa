@@ -43,19 +43,30 @@ app.get('/protected', jwtAuth, (req, res) => {
   });
 });
 
+
+// static files in public directory (index.html and others)
 app.use(express.static('public'));
 
+// gets all wines data
 app.use('/wines/', winesRouter);
+
+// gets all mylist data
 app.use('/mylist/', listRouter);
+
+// for user login 
 app.use('/users/', usersRouter);
+
+// for user authentication
 app.use('/auth/', authRouter);
 
+// all other routes display not found message
 app.use('*', (req, res) => {
   return res.status(404).json({ message: 'Not Found' });
 });
 
 let server;
 
+// start express server and connect to db
 function runServer(databaseUrl = DATABASE_URL, port = PORT) {
 
   return new Promise((resolve, reject) => {
@@ -75,6 +86,8 @@ function runServer(databaseUrl = DATABASE_URL, port = PORT) {
   });
 }
 
+
+// disconnect from db and then shut down express server
 function closeServer() {
   return mongoose.disconnect().then(() => {
     return new Promise((resolve, reject) => {

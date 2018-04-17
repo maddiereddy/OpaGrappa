@@ -1,11 +1,8 @@
 'use strict';
 const express = require('express');
 const bodyParser = require('body-parser');
-
 const {User} = require('./models');
-
 const router = express.Router();
-
 const jsonParser = bodyParser.json();
 
 // Post to register a new user
@@ -15,6 +12,7 @@ router.post('/', jsonParser, (req, res) => {
   const requiredFields = ['username', 'password'];
   const missingField = requiredFields.find(field => !(field in req.body));
 
+  // check for missing username or password
   if (missingField) {
     return res.status(422).json({
       code: 422,
@@ -24,6 +22,7 @@ router.post('/', jsonParser, (req, res) => {
     });
   }
 
+  // check if password and confirmPassword are the same
   if (!(req.body.password && req.body.confirmPassword && req.body.confirmPassword === req.body.password)) {
     return res.status(422).json({
       reason: 'ValidationError',
@@ -36,6 +35,7 @@ router.post('/', jsonParser, (req, res) => {
     field => field in req.body && typeof req.body[field] !== 'string'
   );
 
+  // check if username or password is a string type
   if (nonStringField) {
     return res.status(422).json({
       code: 422,
@@ -141,5 +141,6 @@ router.post('/', jsonParser, (req, res) => {
       res.status(500).json({code: 500, message: 'Internal server error'});
     });
 });
+
 
 module.exports = {router};

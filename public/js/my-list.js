@@ -8,6 +8,7 @@ let toggleType = true;
 let toggleCost = true;
 
 
+// clear out local storage before logging user out
 $(".logout").click(function(e) {
 	console.log('you clicked logout!');
 	localStorage.clear();
@@ -15,16 +16,19 @@ $(".logout").click(function(e) {
 	window.location.reload(true);
 });
 
+// sort wines in table asc/desc order by name
 $("#name-header").click(function(e) {
 	renderList(listData, "name", toggleName);
 	toggleName = !toggleName;
 });
 
+// sort wines in table asc/desc order by type
 $("#type-header").click(function(e) {
 	renderList(listData, "type", toggleType);
 	toggleType = !toggleType;
 });
 
+// sort wines in table asc/desc order by price
 $("#cost-header").click(function(e) {
 	renderList(listData, "cost", toggleCost);
 	toggleCost = !toggleCost;
@@ -55,7 +59,7 @@ function compareValues(key, order) {
   };
 }
 
-
+// get user list of saved wines
 function getList() {
   const settings = {
     url: '/mylist',
@@ -73,6 +77,7 @@ function getList() {
   $.ajax(settings);
 }
 
+// display user list of wines in sortable table
 function renderList(wines, sort, asc) {
   let listItems = [];
 
@@ -94,11 +99,13 @@ function renderList(wines, sort, asc) {
 	$('.table-body').append(listItems);
 }
 
+// button for removing wine from list
 $(document).on('click', 'button.fa-button', function () { 
   deleteWine(this.id);
   return false;
 });
 
+// remove wine from selected row directly from table
 function deleteWine(id) {
   const settings = {
     url: `/mylist/${id}`,

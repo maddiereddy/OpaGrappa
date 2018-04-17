@@ -32,8 +32,6 @@ body {
   font-family: 'Barlow', sans-serif;
 }
 
-/***** GENERAL STYLES *****/
-
 header, footer {
   width: 100%;
   position: fixed;
@@ -110,6 +108,20 @@ nav li a:hover:not(.active) {
   color: gainsboro;
 }
 
+main {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+}
+
+footer {
+  bottom: 0;
+  height: 50px;
+  font-size: 0.8em;
+  background-color: #333333;
+  position:fixed;
+}
+
 .signup-login-list-item, 
 .search-list-item {
   float: right;
@@ -119,12 +131,6 @@ nav li a:hover:not(.active) {
 
 .active {
   background-color: firebrick;
-}
-
-main {
-  height: 100%;
-  width: 100%;
-  margin: auto;
 }
 
 .dashboard-main, 
@@ -202,14 +208,6 @@ main {
   width: 100%;
 }
 
-footer {
-  bottom: 0;
-  height: 50px;
-  font-size: 0.8em;
-  background-color: #333333;
-  position:fixed;
-}
-
 .footer-copyright {
   display: inline-block;
   float: center;
@@ -283,6 +281,8 @@ footer {
   border: 3px solid firebrick;
 }
 
+
+/* table css */
 thead { 
   display: table-header-group;
 }

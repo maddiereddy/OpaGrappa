@@ -8,6 +8,7 @@ const jwtAuth = passport.authenticate('jwt', {session: false});
 const router = express.Router();
 router.use(jwtAuth);
 
+// get all top 20 wines
 router.get('/', (req, res) => {
   Wine
     .find().limit(20)
@@ -20,6 +21,7 @@ router.get('/', (req, res) => {
     });
 });
 
+// get all states in wines table
 router.get('/states', (req, res) => {
   Wine
     .distinct('province')
@@ -32,6 +34,7 @@ router.get('/states', (req, res) => {
     });
 });
 
+// get all regions for a given state 
 router.get('/regions/:state', (req, res) => {
   Wine
     .distinct('region_2', {'province': req.params.state})
@@ -44,6 +47,7 @@ router.get('/regions/:state', (req, res) => {
     });
 });
 
+// get all wineries for a given region
 router.get('/wineries/:region', (req, res) => {
   Wine
     .distinct('winery', {'region_2': req.params.region})
@@ -56,6 +60,7 @@ router.get('/wineries/:region', (req, res) => {
     });
 });
 
+// get all wines for a given winery
 router.get('/list/:winery', (req, res) => {
   Wine
     .find({'winery': req.params.winery})
@@ -68,6 +73,7 @@ router.get('/list/:winery', (req, res) => {
     });
 });
 
+// get a wine by its id
 router.get('/:id', (req, res) => {
   Wine
     .findById(req.params.id)
@@ -77,9 +83,6 @@ router.get('/:id', (req, res) => {
       res.status(500).json({ message: 'Internal server error: GET/:id' });
     });
 });
-
-
-
 
 
 module.exports = {router};

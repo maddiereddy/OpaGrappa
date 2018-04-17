@@ -4,6 +4,7 @@ let user = localStorage.getItem('user');
 let token = localStorage.getItem('token');
 let wineObj = {};
 
+// add selected wine to user list
 $('.wine-details-section').submit(function(event) {
 	event.preventDefault();
 
@@ -26,10 +27,12 @@ $('.wine-details-section').submit(function(event) {
   $.ajax(settings);
 })
 
+// go back
 $("#back-button").click(function() {
 	window.history.back();
 });
 
+// get details of selected wine
 function getDetails(wineId) {
 	const settings = {
     url: `/wines/${wineId}`,
@@ -50,6 +53,7 @@ function getDetails(wineId) {
 
 }
 
+// populate form fields
 function renderDetails() {
 	$("#wine-title").val(wineObj.name);
 	$("#wine-type").val(wineObj.type);
@@ -60,6 +64,7 @@ function renderDetails() {
 	$("#wine-points").val(wineObj.rating);
 	$("#wine-description").text(wineObj.description);
 }
+
 
 $(function() {
   //if token is null, then user NOT logged in, so direct them to login
