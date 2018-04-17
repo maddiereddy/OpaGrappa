@@ -20,11 +20,6 @@ hr {
   display: none;
 }
 
-.pinterest-button {
-  width: 50px;
-  height: 20px;
-}
-
 html, body {
   margin: 0;
   padding: 0;
@@ -239,9 +234,7 @@ footer {
 }
 
 
-/*
-  dashboard.html
-*/
+/* dashboard page */
 
 .search-section {
   width: 70%;
@@ -382,6 +375,7 @@ tbody td a:visited {
   transition: background 0.2s;
 }
 
+/*about section of index page*/
   
 @media (min-width: 900px) {
   .about-section-list {
@@ -434,14 +428,15 @@ tbody td a:visited {
 
 /***** MEDIA QUERIES *****/
 
-
-@media screen and (max-width: 480px) {
-
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 767px) {
+/* Styles */
   .signup-login-list-item {
-    font-size: 12px;
+    font-size: 0.6em;
     float: right;
     margin-top: 0;
     padding-top: 0;
+    width: 33%;
   }
 
   header h1 {
@@ -452,10 +447,47 @@ tbody td a:visited {
 
   header h2 {
     font-size: 0;
+    width: 0;
   }
 
   .learn-more-section .inner {
     margin: 40% auto;
   }
+
+  .wines-table {
+    margin: 50px 10px;
+    width: calc(100% - 20px);
+  }
+
+  .search-section {
+    width: calc(100% - 20px);
+    margin: 130px 10px 50px 10px;
+  }
+
+  .search-section select {
+    width: 28%;
+  }
+
+  .search-section button {
+    font-size: 1em;
+    margin-top: 2px;
+    padding: 1px;
+    border-radius: 5px;
+
+  }
 }
 
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1023px) {
+/* Styles */
+  .signup-login-list-item {
+    font-size: 1em;
+    float: right;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  header h2 {
+    font-size: 1em;
+  }
+}
