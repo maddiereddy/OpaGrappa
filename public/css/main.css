@@ -351,11 +351,9 @@ tbody td a:visited {
   color: black;
 }
 
-.wines-table tr:hover {
-  background-color: firebrick;
-}
-
-.wines-table tr:hover a {
+.wines-table tr:hover,
+.wines-table tr:hover a, 
+.wines-table tr:hover .fa-button {
   background-color: firebrick;
   color: whitesmoke;
 }
