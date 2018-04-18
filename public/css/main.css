@@ -293,12 +293,8 @@ tbody {
   overflow: auto; 
 }
 
-tbody td a {
-  text-decoration: none;
-}
-
 tbody td a:visited {
-  color: darkmagenta;
+  color: blue;
 }
 
 .wines-table {
@@ -308,6 +304,7 @@ tbody td a:visited {
   margin: 50px 15%;
   height: 100px;
   font: 13px Arial, Helvetica, sans-serif;
+  font-weight: bolder;
   color: firebrick;
   width: 70%;
   border: 2px solid firebrick;
@@ -338,20 +335,29 @@ tbody td a:visited {
 
 .wines-table tr:nth-child(even) {
   background-color: whitesmoke;
+  color: firebrick;
 }
 
 .wines-table tr:nth-child(odd) {
   background-color: gainsboro;
+  color: firebrick;
+}
+
+.wines-table tr a {
+  color: firebrick;
+}
+
+.wines-table tr a:visited {
+  color: black;
 }
 
 .wines-table tr:hover {
-  background-color: dimgray;
-  color: gainsboro;
+  background-color: firebrick;
 }
 
-.wines-table tr:hover a:visited {
-  background-color: dimgray;
-  color: magenta;
+.wines-table tr:hover a {
+  background-color: firebrick;
+  color: whitesmoke;
 }
 
 .wines-table .fa-button {

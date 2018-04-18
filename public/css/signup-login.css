@@ -154,6 +154,7 @@ button a {
 .wine-details-section textarea {
   background-color: gainsboro;
   font-size: 13px;
+  font-weight: bolder;
   line-height: 18px;
   height: 30px;
   border: 1px solid silver;
