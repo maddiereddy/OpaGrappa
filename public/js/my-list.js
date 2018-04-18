@@ -59,6 +59,31 @@ function compareValues(key, order) {
   };
 }
 
+// Pop up window to display message that a wine was removed from the list
+// Or, tell user to create a list
+function displayModal(header, str1, str2, bRefresh) {
+  $('body').append(`
+    <div class="overlay">
+      <div class="popup">
+        <div class="modal-header">
+          <span class="close"><i class="fa fa-times" aria-hidden="true"></i></span>
+          <p>${header}</p>
+        </div>
+        <div class="modal-body">
+          <span>${str1}.</span>
+          <p>${str2}</p>
+        </div>
+      </div>
+    </div>`);
+
+  $('.close').click(function () {
+    $('.overlay').remove();
+    if (bRefresh) window.location.reload(true);
+  })
+
+
+}
+
 // get user list of saved wines
 function getList() {
   const settings = {
@@ -67,8 +92,14 @@ function getList() {
     dataType: 'json',
     type: 'GET',
     success: function(wines) {
-    	listData = wines;
-      renderList(wines, "name", toggleName);
+      if (wines.length > 0) {
+      	listData = wines;
+        renderList(wines, "name", toggleName);
+      } else {
+        let str1 = `You have no items in your list!`;
+        let str2 = `Start by 'Search'-ing and adding wines from there!!`;
+        displayModal(`Create a List`, str1, str2, false);
+      }
     },
     error: function(data) {
       console.log("Error: API could not answer your get request.");
@@ -107,13 +138,18 @@ $(document).on('click', 'button.fa-button', function () {
 
 // remove wine from selected row directly from table
 function deleteWine(id) {
+  let toRemove = listData.find(wine => { 
+    return (wine.id === id)
+  });
+
   const settings = {
     url: `/mylist/${id}`,
     method: 'DELETE',
     headers: { 'Authorization': `Bearer ${token}` },
     contentType: "application/json",
     success: function(wine) {
-      window.location.reload(true);
+      let messageStr = `has been removed from your list`;
+      displayModal(`Wine removed from List`, toRemove.name, messageStr, true);
     },
     error: function(data) {
       console.log("Error: API could not delete list item.");

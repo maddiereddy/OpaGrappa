@@ -199,6 +199,7 @@ $(document).on('click', 'button.fa-button', function () {
 
 // add wine from table with comment field empty
 function addWine(id){
+
   const getWine = {
     url: `/wines/${id}`,
     headers: { 'Authorization': `Bearer ${token}` },
@@ -217,11 +218,14 @@ function addWine(id){
         contentType: "application/json",
         success: function(newWine) {
           //if selected wine already exists on user list
-          alert(`Wine: ${newWine.name} has been added to your list`);
+          let messageStr = `has been added to your list`;
+          displayModal(`Add Wine to List`, newWine.name, messageStr);
+          // alert(`Wine: ${newWine.name} has been added to your list`);
         },
         error: function(data) {
           if (data.responseJSON.code === 422) 
-            alert(`Wine: ${wine.name}. ${data.responseJSON.message}`)
+            displayModal(`Add Wine to List`, wine.name, data.responseJSON.message);
+
           console.log("Error: API could not create a new list item.");
         }
       };
@@ -233,6 +237,27 @@ function addWine(id){
   };
 
   $.ajax(getWine);
+}
+
+// Pop up window to display message: either that wine was added to list or that it could not be added
+function displayModal(header, str1, str2) {
+  $('body').append(`
+    <div class="overlay">
+      <div class="popup">
+        <div class="modal-header">
+          <span class="close"><i class="fa fa-times" aria-hidden="true"></i></span>
+          <p>${header}</p>
+        </div>
+        <div class="modal-body">
+          <span>${str1}.</span>
+          <p>${str2}</p>
+        </div>
+      </div>
+    </div>`);
+
+  $('.close').click(function () {
+    $('.overlay').remove();
+  })
 }
 
 // get 20 wines by default when page first loaded up

@@ -98,7 +98,6 @@ router.put('/:id', jsonParser, (req, res) => {
 
 // delete item by id
 router.delete('/:id', jsonParser, (req, res) => {
-  console.log(`id: ${req.params.id}`);
 
   MyList
     .findByIdAndRemove(req.params.id)

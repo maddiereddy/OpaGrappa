@@ -426,6 +426,72 @@ tbody td a:visited {
   margin-bottom: 20px;
 }
 
+
+/*---------------Popup Box--------------*/
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.popup {
+  line-height: 2em;
+  background-color: whitesmoke;
+  margin: 0 auto;
+  padding: 5px;
+  width: 70%;
+  max-width: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 10px solid firebrick;
+  transform: translate(-50%, -50%);
+}
+
+.close {
+  color: whitesmoke;
+  float: right;
+  font-size: 2em;
+  font-weight: bold;
+  padding-bottom: 4px;
+  padding-right: 10px;
+}
+
+.close:hover,
+.close:focus {
+  color: firebrick;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header p {
+  padding: 1px 10px;
+  background-color: black;
+  color: whitesmoke;
+  font-weight: bolder;
+  font-family: 'Julee', cursive;
+  font-size: 1.5em;
+}
+
+.modal-body {padding: 1px 10px;}
+
+.modal-body span {
+  font-family: 'Julee', cursive;
+  font-weight: bolder;
+  color: firebrick;
+  font-size: 1.2em;
+}
+
+.modal-body p {
+  font-size: 1.2em;
+  font-weight: bolder;
+}
+
+.modal-body {padding: 1px 10px;}
+
 /***** MEDIA QUERIES *****/
 
 /* Smartphones (portrait and landscape) ----------- */
