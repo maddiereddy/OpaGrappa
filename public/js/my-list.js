@@ -70,7 +70,7 @@ function displayModal(header, str1, str2, bRefresh) {
           <p>${header}</p>
         </div>
         <div class="modal-body">
-          <span>${str1}.</span>
+          <span>${str1}</span>
           <p>${str2}</p>
         </div>
       </div>

@@ -147,32 +147,3 @@ describe('Protected endpoint', function () {
     });
   });
 });
-
-// function seedWinesData(userId) {
-//   const seedData = [];
-//   for (let i = 1; i <= 10; i++) {
-//     seedData.push({
-//       points: `${faker.random.number()}`,
-//       title: faker.lorem.sentence(),
-//       description: faker.lorem.sentences(),
-//       price: `${faker.commerce.price()}`,
-//       designation: faker.lorem.words(),
-//       variety: faker.lorem.word(),
-//       region_1: faker.address.city(),
-//       region_2: faker.address.county(),
-//       province: faker.address.state(),
-//       country: faker.address.country(),
-//       winery: faker.company.companyName()
-//     });
-//   }
-//   // this will return a promise
-//   return Wine.insertMany(seedData);
-// }
-
-// function clearWines() {
-//   return new Promise((resolve, reject) => {
-//     Wine.deleteMany({})
-//       .then(result => resolve(result))
-//       .catch(err => reject(err));
-//   });
-// }
