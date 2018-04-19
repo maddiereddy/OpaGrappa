@@ -499,7 +499,7 @@ tbody td a:visited {
 /***** MEDIA QUERIES *****/
 
 /* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 320px) and (max-device-width : 767px) {
+@media only screen and (min-device-width : 310px) and (max-device-width : 767px) {
 /* Styles */
   .signup-login-list-item {
     font-size: 0.6em;
@@ -531,11 +531,15 @@ tbody td a:visited {
 
   .search-section {
     width: calc(100% - 20px);
-    margin: 130px 10px 50px 10px;
+    margin: 10px;
+    padding: 5px;
   }
 
   .search-section select {
-    width: 28%;
+    width: 47%;
+    height: 20px;
+    margin-top: 10px;
+    font-size: 0.7em;
   }
 
   .search-section button {
@@ -543,7 +547,7 @@ tbody td a:visited {
     margin-top: 2px;
     padding: 1px;
     border-radius: 5px;
-
+    margin-right: 3%;
   }
 }
 
@@ -555,6 +559,18 @@ tbody td a:visited {
     float: right;
     margin-top: 0;
     padding-top: 0;
+  }
+
+  .search-section select {
+    font-size: 0.8em;
+  }
+
+  .search-section button {
+    font-size: 1em;
+    margin-top: 2px;
+    padding: 2px;
+    border-radius: 5px;
+    margin-right: 2px;
   }
 
   header h2 {

@@ -30,9 +30,7 @@ form p {
 }
 
 input, 
-textarea, 
-button[type="submit"], 
-button[type="button"] {
+textarea {
   display: block;
   width: 100%;
   height: auto;
@@ -50,13 +48,15 @@ button[type="button"] {
 button[type="submit"], 
 button[type="button"] {
   height: auto;
-  font-size: 22px;
-  font-weight: 500;
+  font-size: 10px;
+  font-weight: bolder;
   text-align: center;
   color: white;
   background-color: firebrick;
   border: 0;
   cursor: pointer;
+  border-radius: 10px;
+  padding: 5px;
 }
 
 button[type="submit"]:hover,
@@ -170,10 +170,10 @@ button a {
 }  
 
 .wine-details-section button {
-  width: 20%;
+  width: 21%;
   color: gainsboro;
-  font-size: 1.2em;
-  margin: 20px 2%;
+  font-size: 1em;
+  margin: 20px 0.5%;
 }
 
 .half-width {
@@ -186,19 +186,42 @@ button a {
 }
 
 /* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 320px) and (max-device-width : 1024px) {
+@media only screen and (min-device-width : 310px) and (max-device-width : 767px) {
 /* Styles */
   .setup-form, 
   .wine-details-section {
-    width: calc(100% - 20px);
-    margin: 100px 10px 50px 10px;
+    width: calc(100% - 12px);
+    margin: 100px 0px 50px 0px;
     overflow: hidden;
   }
 
   .wine-details-section button { 
-    font-size: 0.7em;
-    padding: 5px;
-    margin-top: 10px;
+    font-size: 0.5em;
+    height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .hidden-height {
+    height: 10px;
+  }
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1023px) {
+/* Styles */
+  .setup-form, 
+  .wine-details-section {
+    width: calc(100% - 12px);
+    margin: 100px 0px 50px 0px;
+    overflow: hidden;
+  }
+
+  .wine-details-section button { 
+    font-size: 1em;
+    height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .hidden-height {
