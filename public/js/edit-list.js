@@ -4,6 +4,28 @@ let user = localStorage.getItem('user');
 let token = localStorage.getItem('token');
 let wineObj = {};
 
+// Pop up window to display message that a comment was added or updated
+function displayModal(header, str1, str2, bRefresh) {
+  $('body').append(`
+    <div class="overlay">
+      <div class="popup">
+        <div class="modal-header">
+          <span class="close"><i class="fa fa-times" aria-hidden="true"></i></span>
+          <p>${header}</p>
+        </div>
+        <div class="modal-body">
+          <span>${str1}</span>
+          <p>${str2}</p>
+        </div>
+      </div>
+    </div>`);
+
+  $('.close').click(function () {
+    $('.overlay').remove();
+    if (bRefresh) window.location.reload(true);
+  })
+}
+
 // add or edit comments on selected wine from list
 $('.wine-details-section').submit(function(event) {
 	event.preventDefault();
@@ -17,7 +39,8 @@ $('.wine-details-section').submit(function(event) {
     headers: { 'Authorization': `Bearer ${token}` },
     contentType: "application/json",
     success: function(wine) {
-      window.location.reload(true);
+      displayModal(`Add or Update Comments`, "Comments field has been updated!", "", true);
+      // window.location.reload(true);
     },
     error: function(data) {
       console.log("Error: API could not update list item.");

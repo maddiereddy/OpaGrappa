@@ -80,8 +80,6 @@ function displayModal(header, str1, str2, bRefresh) {
     $('.overlay').remove();
     if (bRefresh) window.location.reload(true);
   })
-
-
 }
 
 // get user list of saved wines
