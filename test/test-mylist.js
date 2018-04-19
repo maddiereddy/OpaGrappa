@@ -85,11 +85,19 @@ let listId = '';
 describe('/mylist', function () {
 
   before(function () {
-    return runServer(TEST_DATABASE_URL).then(() => createTestUser());
+    return runServer(TEST_DATABASE_URL);
   });
 
   after(function () {
-    return removeTestUser().then(() => closeServer());
+    return closeServer();
+  });
+
+  beforeEach(function () {
+    return createTestUser();
+  });
+
+  afterEach(function () {
+    return removeTestUser();
   });
 
 
