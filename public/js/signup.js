@@ -1,6 +1,6 @@
 'use strict';
 
-// Gett this user's JWT and store it locally for use in other pages:
+// Get this user's JWT and store it locally for use in other pages:
 function getAndStoreJwt(userData) {
   const settings = {
     url: '/auth/login',
@@ -10,7 +10,7 @@ function getAndStoreJwt(userData) {
     success: function(data) {
       localStorage.setItem('token', data.authToken);
       localStorage.setItem('user', userData.username);
-      window.location.href = '/my-list.html';
+      window.location.href = '/dashboard.html';
     },
     error: function(data) {
       console.log("Error: user authentication failed.");
@@ -20,7 +20,7 @@ function getAndStoreJwt(userData) {
   $.ajax(settings);
 }
 
-
+// create a new user account by calling api
 function createNewUser(userData) {
   const settings = {
     url: '/users',
@@ -29,7 +29,6 @@ function createNewUser(userData) {
     contentType: "application/json",
     success: function(user) {
       getAndStoreJwt(userData);
-      // window.location.href = "login.html";
     },
     error: function(data) {
       console.log("Error: API could not create a new user.");
@@ -39,6 +38,7 @@ function createNewUser(userData) {
   $.ajax(settings);
 }
 
+// button click or form submit to create a new user account
 $('.setup-form').submit( function(event) {
   event.preventDefault();
   

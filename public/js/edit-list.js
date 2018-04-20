@@ -40,7 +40,6 @@ $('.wine-details-section').submit(function(event) {
     contentType: "application/json",
     success: function(wine) {
       displayModal(`Add or Update Comments`, "Comments field has been updated!", "", true);
-      // window.location.reload(true);
     },
     error: function(data) {
       console.log("Error: API could not update list item.");

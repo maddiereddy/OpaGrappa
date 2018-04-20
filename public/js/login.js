@@ -1,5 +1,6 @@
 'use strict';
 
+// login in user with credentials
 function logUserIn(userData) {
   const settings = {
     url: '/auth/login',
