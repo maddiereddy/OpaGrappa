@@ -195,7 +195,7 @@ button a {
   .setup-form, 
   .wine-details-section {
     width: calc(100% - 12px);
-    margin: 100px 0px 50px 0px;
+    margin: 100px auto 50px auto;
     overflow: hidden;
   }
 
@@ -217,7 +217,7 @@ button a {
   .setup-form, 
   .wine-details-section {
     width: calc(100% - 12px);
-    margin: 100px 0px 50px 0px;
+    margin: 100px auto 50px auto;
     overflow: hidden;
   }
 
