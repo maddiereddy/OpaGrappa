@@ -7,7 +7,7 @@ https://opa-grappa.herokuapp.com/ <br>
 
 
 ## Description <br>  
-Opa!Grappa!! is an app that keeps track of all the wines a user has consumed or would like to try in the future. User can search for a wine by narrowing down to a winery or vineyard. User can find more information of selected wine by clicking on its name and it will display details like the name, type, vintage, vineyard, ratings and reviews (by Wine Enthusiast) and allows user to add their own comments    <br>
+Opa!Grappa!! is an app that keeps track of all the wines a user has consumed or would like to try in the future. User can search for a wine by narrowing down to a winery or vineyard. Can also sort through search results in table and through their own list by clicking on the headers of the table (ascending and descending). User can find more information of selected wine by clicking on its name and it will display details like the name, type, vintage, vineyard, ratings and reviews (by Wine Enthusiast) and allows user to add their own comments    <br>
 
 
 ## Technologies used<br> 
@@ -79,3 +79,18 @@ Opa!Grappa!! is an app that keeps track of all the wines a user has consumed or 
 
 ### Search page:<br>
 <img src="/screenshots/search.png" alt="Search page - blank"> <br>
+
+
+
+## Nice-to-have-features (to be implemented) <br>
+
+- Search text box with autocomplete as alternative to using the drop downs <br>
+- Paging through search results <br>
+- Allowing search by country <br>
+- Uploading pictures to be stored along with user comments <br>
+- Allowing to add their own wines, not already in the database, and being able to store them on their list <br>
+- Reset password <br>
+- Allowing users to compare notes with other users <br> 
+</i>
+
+
