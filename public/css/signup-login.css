@@ -48,7 +48,7 @@ textarea {
 button[type="submit"], 
 button[type="button"] {
   height: auto;
-  font-size: 10px;
+  font-size: 1.5em;
   font-weight: bolder;
   text-align: center;
   color: white;
@@ -96,6 +96,8 @@ button a {
 
 #signup {
   width: 100px;
+  display: block;
+  margin: 0 auto;
 }
 
 .setup-form, 
