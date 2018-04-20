@@ -1,12 +1,16 @@
 # Opa!Grappa!!    <br>
-## An online journal for keeping track of your favorite wines <br>
+### An online journal for keeping track of your favorite wines <br>
  
 
-### Description <br>  
+## Live Demo at <br>
+https://opa-grappa.herokuapp.com/ <br>
+
+
+## Description <br>  
 Opa!Grappa!! is an app that keeps track of all the wines a user has consumed or would like to try in the future. User can search for a wine by narrowing down to a winery or vineyard. User can find more information of selected wine by clicking on its name and it will display details like the name, type, vintage, vineyard, ratings and reviews (by Wine Enthusiast) and allows user to add their own comments    <br>
 
 
-### Technologies <br> 
+## Technologies used<br> 
 
 #### Front End:
 - JavaScript <br>
@@ -31,11 +35,7 @@ Opa!Grappa!! is an app that keeps track of all the wines a user has consumed or 
 - The app is responsive and optimized for both desktop and mobile viewing and use <br>
 
 
-### Live Demo at <br>
-https://opa-grappa.herokuapp.com/ <br>
-
-
-### API Documentation <br>
+## API Documentation <br>
 
 #### API endpoints <br>
 - API for registering new users and checking existing user logins: <br>
@@ -63,7 +63,7 @@ https://opa-grappa.herokuapp.com/ <br>
 		* '/:id' - DELETE for deleting an existing item by id <br>
 
 
-### Screenshots <br>
+## Screenshots <br>
 
 * Index page:<br>
 <img src="/screenshots/index.png" alt="Home page - blank"> <br>
