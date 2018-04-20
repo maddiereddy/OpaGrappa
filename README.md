@@ -1,8 +1,8 @@
 # Opa!Grappa!!    <br>
-### An online journal for keeping track of your favorite wines <br>
+## <i>An online journal for keeping track of your favorite wines <br>
  
 
-## Live Demo at <br>
+## Live Demo
 https://opa-grappa.herokuapp.com/ <br>
 
 
