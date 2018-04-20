@@ -65,17 +65,17 @@ Opa!Grappa!! is an app that keeps track of all the wines a user has consumed or 
 
 ## Screenshots <br>
 
-* Index page:<br>
+### Index page:<br>
 <img src="/screenshots/index.png" alt="Home page - blank"> <br>
 
-* Blank login page:<br>
+### Login page:<br>
 <img src="/screenshots/login.png" alt="Login page - blank"> <br>
 
-* My List page:<br>
+### My List page:<br>
 <img src="/screenshots/mylist.png" alt="My List page - blank"> <br>
 
-* Details page:<br>
+### Details page:<br>
 <img src="/screenshots/details.png" alt="details page - blank"> <br>
 
-* Search page:<br>
+### Search page:<br>
 <img src="/screenshots/search.png" alt="Search page - blank"> <br>
