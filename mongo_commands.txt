@@ -17,3 +17,11 @@ db.wines.aggregate([
 db.wines_us.find({}).limit(1).map(docs  => Object.keys(docs))
 
 4. db.createCollections("my_list")
+
+////////
+5. This is to fix a problem running this through Travis CI and deploying to Heroku.
+If you get an 'invalid credentials' error and failure to deploy, then run followning 
+command in terminal:
+travis encrypt $(heroku auth:token) --add deploy.api_key
+
+Build should run fine now because new api key is created.

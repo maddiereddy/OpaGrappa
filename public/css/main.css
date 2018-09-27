@@ -73,10 +73,16 @@ header h2 {
 
 .signup-login-list-item a {
   float: right;
+  color: gainsboro;
   height: 1em;
   font-size: 0.9em;
   cursor: pointer;
   padding: 3px;
+}
+
+.signup-login-list-item a:hover {
+  cursor: pointer;
+  color: firebrick;
 }
 
 caption {
@@ -101,23 +107,6 @@ nav ul {
 
 nav li {
   float: left;
-}
-
-nav li a {
-  display: block;
-  color: gainsboro;
-  text-align: center;
-  padding: 12px 15px;
-  text-decoration: none;
-  font-size: 1.5em;
-  font-weight: bold;
-  border-radius: 10px;
-  margin-top: 2px;
-}
-
-nav li a:hover:not(.active) {
-  background-color: firebrick;
-  color: gainsboro;
 }
 
 main {
@@ -219,7 +208,6 @@ footer {
 
 .footer-copyright {
   display: inline-block;
-  float: center;
   margin: 0 5px;
   font-size: 12px;
 }
@@ -604,4 +592,12 @@ tbody td a:visited {
     width: 300px;
   }
   
+}
+
+@media only screen and (min-height : 1300px) and (min-width : 1024px){
+
+  .learn-more-section .inner {
+    margin: 30% auto;
+  }
+
 }

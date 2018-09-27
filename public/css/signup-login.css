@@ -102,11 +102,21 @@ button a {
   margin: 0 auto;
 }
 
-.setup-form, 
 .wine-details-section {
 	width: 50%;
 	border: 2px solid firebrick;
 	border-radius: 10px;
+}
+
+.setup-form  {
+  border: 2px solid firebrick;
+  border-radius: 10px;
+  margin: 120px auto 0;
+  min-width: 300px;
+}
+
+.setup-form input {
+  min-width: 200px;
 }
 
 .switch a {
@@ -119,7 +129,13 @@ button a {
   font-size: 1.2em;
 }
 
-.demo-login, 
+.demo-login {
+  margin-top: 20px;
+  font-size: 1.4em;
+  font-weight: bolder;
+  font-family: 'Montserrat';
+}
+
 .demo-account {
   font-size: 1.2em;
   font-weight: bolder;
@@ -189,10 +205,8 @@ button a {
   float: right;
 }
 
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 310px) and (max-device-width : 767px) {
+@media only screen and (min-width : 480px) {
 /* Styles */
-  .setup-form, 
   .wine-details-section {
     width: calc(100% - 12px);
     margin: 100px auto 50px auto;
@@ -209,12 +223,19 @@ button a {
   .hidden-height {
     height: 10px;
   }
+
+  .setup-form  {
+    margin: 120px auto 80px;
+    min-width: 400px;
+  }
+  
+  .setup-form input {
+    min-width: 300px;
+  }
 }
 
-/* iPads (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1023px) {
+@media only screen and (min-width : 768px) {
 /* Styles */
-  .setup-form, 
   .wine-details-section {
     width: calc(100% - 12px);
     margin: 100px auto 50px auto;
@@ -231,10 +252,18 @@ button a {
   .hidden-height {
     height: 10px;
   }
+
+  .setup-form  {
+    margin: 120px auto 80px;
+    min-width: 700px;
+  }
+  
+  .setup-form input {
+    min-width: 300px;
+  }
 }
 
-/* iPads (portrait and landscape) ----------- */
-@media only screen and (min-device-height : 1300px) {
+@media only screen and (min-height : 1300px) and (min-width : 1024px) {
 /* Styles */
   .wine-details-section {
     min-height: 600px;
