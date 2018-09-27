@@ -9,6 +9,12 @@ https://opa-grappa.herokuapp.com/ <br>
 ## Description <br>  
 Opa!Grappa!! is an app that keeps track of all the wines a user has consumed or would like to try in the future. User can search for a wine by narrowing down to a winery or vineyard. Can also sort through search results in table and through their own list by clicking on the headers of the table (ascending and descending). User can find more information of selected wine by clicking on its name and it will display details like the name, type, vintage, vineyard, ratings and reviews (by Wine Enthusiast) and allows user to add their own comments    <br>
 
+## To Run Locally   
+ Git Clone this repo  
+ cd into folder  
+`npm install`  
+`npm start`    
+Add .env file with API URL and variable name `JWT-SECRET`   <br>
 
 ## Technologies used<br> 
 
