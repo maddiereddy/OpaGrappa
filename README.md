@@ -14,7 +14,7 @@ Opa!Grappa!! is an app that keeps track of all the wines a user has consumed or 
  cd into folder  
 `npm install`  
 `npm start`    
-Add .env file with API URL and variable name `JWT-SECRET`   <br>
+Add .env file with API URL and variable name `JWT_SECRET`   <br>
 
 ## Technologies used<br> 
 
