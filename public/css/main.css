@@ -232,9 +232,8 @@ footer {
 /* dashboard page */
 
 .search-section {
-  width: 70%;
-  margin: 130px 15% 50px 15%;
-  height: 100px;
+  margin: 130px 10px 50px;
+  height: 240px;
   border-radius: 10px;
   font-family: sans-serif;
   border: 2px solid firebrick;
@@ -243,7 +242,7 @@ footer {
 }
 
 .search-section legend {
-  font-size: 1.2em;
+  font-size: 1.8em;
   font-weight: bolder;
   color: firebrick;
   padding: 2px 10px ;
@@ -251,25 +250,25 @@ footer {
 }
 
 .search-section select {
-  width: 30%;
-  margin: 0 0.5%;
-  background-color: firebrick;
+  display: block;
+  margin: 5px auto;
   font-size: 15px;
-  height: 30px;
-  color: gainsboro;
-  position: relative;
-  outline-color: firebrick;
+  height: 35px;
+  color: black;
+  border: 2px solid firebrick;
+  min-width: 300px;
 }
 
 .search-section button {
+  display: block;
+  margin: 10px auto 5px;
   font-size: 1.4em;
   background-color: firebrick;
   color: gainsboro;
   border: 2px solid firebrick;
   border-radius: 10px;
-  margin-top: -2px;
-  float: right;
   padding: 5px;
+  width: 100px;
 }
 
 .search-section button:hover {
@@ -520,27 +519,6 @@ tbody td a:visited {
     margin: 50px 10px;
     width: calc(100% - 20px);
   }
-
-  .search-section {
-    width: calc(100% - 20px);
-    margin: 10px;
-    padding: 5px;
-  }
-
-  .search-section select {
-    width: 47%;
-    height: 20px;
-    margin-top: 10px;
-    font-size: 0.7em;
-  }
-
-  .search-section button {
-    font-size: 1em;
-    margin-top: 2px;
-    padding: 1px;
-    border-radius: 5px;
-    margin-right: 3%;
-  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -558,18 +536,6 @@ tbody td a:visited {
     font-size: 1.2em;
     cursor: pointer;
     padding: 5px;
-  }
-
-  .search-section select {
-    font-size: 0.8em;
-  }
-
-  .search-section button {
-    font-size: 1em;
-    margin-top: 2px;
-    padding: 2px;
-    border-radius: 5px;
-    margin-right: 2px;
   }
 
   header h1 {
@@ -590,6 +556,10 @@ tbody td a:visited {
     font-size: 24px;
     padding: 20px 30px;
     width: 300px;
+  }
+
+  .search-section select {
+    min-width: 600px;
   }
   
 }
