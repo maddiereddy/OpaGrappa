@@ -56,15 +56,27 @@ header {
 }
 
 header h1 {
-	font-size: 3.6em;
-  line-height: 10px;
-  margin-left: 20px;
+	font-size: 2.2em;
+  margin-left: 16px;
+  margin-top: 24px;
 }
 
 header h2 {
-  font-size: 1.5em;
-  margin-left: 20px;
-  margin-top: 40px;
+  display: none;
+}
+
+.signup-login-list-item {
+  float: right;
+  margin-top: 30px;
+  margin-right: 8px;
+}
+
+.signup-login-list-item a {
+  float: right;
+  height: 1em;
+  font-size: 0.9em;
+  cursor: pointer;
+  padding: 3px;
 }
 
 caption {
@@ -122,9 +134,9 @@ footer {
   position:fixed;
 }
 
-.signup-login-list-item, 
 .search-list-item {
   float: right;
+  margin-right: 20px;
   margin-top: 25px;
   cursor: pointer;
 }
@@ -149,8 +161,7 @@ footer {
 }
 
 .learn-more-section .inner {
-  margin: 25% auto;
-  width: 50%;
+  margin: 50% auto;
   text-align: center;
   padding: 10px;
 }
@@ -160,15 +171,13 @@ footer {
 }
 
 .learn-more-section .user-button {
-  max-width: 600px;
   margin: 5px auto;
-  font-size: 16px;
-  border-top-left-radius: 0.5rem;
-  border-bottom-right-radius: .5rem;
+  font-size: 18px;
+  border-top-left-radius: 0.8rem;
+  border-bottom-right-radius: 0.8rem;
   background-color: firebrick;
-  line-height: 25px;
-  padding: 8px 15px;
-  width: 150px;
+  padding: 10px 15px;
+  width: 200px;
   text-align: center;
   text-decoration: none;
 }
@@ -498,26 +507,21 @@ tbody td a:visited {
 
 /***** MEDIA QUERIES *****/
 
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 310px) and (max-device-width : 767px) {
+@media only screen and (min-width: 480px) {
 /* Styles */
+  
   .signup-login-list-item {
-    font-size: 0.6em;
     float: right;
-    margin-top: 0;
-    padding-top: 0;
-    width: 33%;
+    margin-top: 28px;
+    margin-right: 10px;
   }
-
-  header h1 {
-    font-size: 2em;
-    line-height: 10px;
-    margin-left: 20px;
-  }
-
-  header h2 {
-    font-size: 0;
-    width: 0;
+  
+  .signup-login-list-item a {
+    float: right;
+    height: 1em;
+    font-size: 1em;
+    cursor: pointer;
+    padding: 5px;
   }
 
   .learn-more-section .inner {
@@ -551,14 +555,21 @@ tbody td a:visited {
   }
 }
 
-/* iPads (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1023px) {
+@media only screen and (min-width: 768px) {
 /* Styles */
+
   .signup-login-list-item {
-    font-size: 1em;
     float: right;
-    margin-top: 0;
-    padding-top: 0;
+    margin-top: 28px;
+    margin-right: 10px;
+  }
+  
+  .signup-login-list-item a {
+    float: right;
+    height: 1em;
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 5px;
   }
 
   .search-section select {
@@ -573,7 +584,24 @@ tbody td a:visited {
     margin-right: 2px;
   }
 
-  header h2 {
-    font-size: 1em;
+  header h1 {
+    font-size: 2.4em;
+    margin-left: 16px;
+    margin-top: 24px;
   }
+
+  header h2 {
+    display: block;
+    float: left;
+    font-size: 1.2em;
+    margin-left: 20px;
+    margin-top: 40px;
+  }
+
+  .learn-more-section .user-button {
+    font-size: 24px;
+    padding: 20px 30px;
+    width: 300px;
+  }
+  
 }
