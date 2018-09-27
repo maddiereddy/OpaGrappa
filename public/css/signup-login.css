@@ -88,12 +88,12 @@ button a {
 #edit-button, 
 #delete-button {
   float: left;
-  margin: 10px 6%;
+  margin: 10px auto;
 }
 
 #add-button {
   float: right;
-  margin: 10px 6%;
+  margin: 10px auto;
 }
 
 #signup {

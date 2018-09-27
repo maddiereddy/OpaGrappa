@@ -296,8 +296,7 @@ tbody td a:visited {
 .wines-table {
   table-layout: auto;
   border-collapse: collapse;
-  width: 100%;
-  margin: 50px 15%;
+  margin: 50px auto 10px;
   height: 100px;
   font: 13px Arial, Helvetica, sans-serif;
   font-weight: bolder;
