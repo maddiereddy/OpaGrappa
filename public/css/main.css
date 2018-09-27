@@ -209,7 +209,7 @@ footer {
 .footer-copyright {
   display: inline-block;
   margin: 0 5px;
-  font-size: 12px;
+  font-size: 1em;
 }
 
 .footer-copyright a {
@@ -218,8 +218,7 @@ footer {
 
 .footer-contact {
   display: inline-block;
-  float: center;
-  margin-left: 10px;
+  margin: 2px auto;
 }
 
 .footer-contact a {
