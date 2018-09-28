@@ -160,6 +160,7 @@ footer {
 }
 
 .learn-more-section .user-button {
+  font-family: 'Julee';
   margin: 5px auto;
   font-size: 18px;
   border-top-left-radius: 0.8rem;
@@ -292,18 +293,23 @@ tbody td a:visited {
   color: blue;
 }
 
-.wines-table {
-  table-layout: auto;
-  border-collapse: collapse;
-  margin: 50px auto 10px;
-  height: 100px;
-  font: 13px Arial, Helvetica, sans-serif;
-  font-weight: bolder;
-  color: firebrick;
-  width: 70%;
+.table-section {
+  display: block;
   border: 2px solid firebrick;
   border-radius: 10px;
   padding: 5px;
+  margin: 0 10px;
+}
+
+.wines-table {
+  width: inherit;
+  table-layout: auto;
+  border-collapse: collapse;
+  margin: 20px auto 10px;
+  font: 13px Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  color: firebrick;
+  
 }
 
 .wines-table th {
@@ -513,10 +519,10 @@ tbody td a:visited {
     margin: 40% auto;
   }
 
-  .wines-table {
+  /* .wines-table {
     margin: 50px 10px;
     width: calc(100% - 20px);
-  }
+  } */
 }
 
 @media only screen and (min-width: 768px) {

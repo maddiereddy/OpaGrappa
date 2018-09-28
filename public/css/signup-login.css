@@ -6,11 +6,12 @@ fieldset {
 }
 
 form {
-	margin: 110px auto;
-  width: 40%;
-  padding: 20px 50px 20px 50px;
-  border-radius: 3px;
+	margin: 100px 10px;
+  padding: 20px;
+  border-radius: 10px;
   background-color: whitesmoke;
+  display: block;
+	border: 2px solid firebrick;
 }
 
 form legend {
@@ -86,26 +87,20 @@ button a {
 
 #back-button, 
 #edit-button, 
-#delete-button {
-  float: left;
-  margin: 10px auto;
-}
-
+#delete-button, 
 #add-button {
   float: right;
-  margin: 10px auto;
+  margin: 6px;
+  width: 100px;
+  padding: 10px;
 }
+
 
 #signup {
-  width: 100px;
+  width: 120px;
   display: block;
   margin: 0 auto;
-}
-
-.wine-details-section {
-	width: 50%;
-	border: 2px solid firebrick;
-	border-radius: 10px;
+  padding: 10px
 }
 
 .setup-form  {
@@ -140,18 +135,23 @@ button a {
   font-size: 1.2em;
   font-weight: bolder;
 }
-
 .wine-details-section {
+  
+  /* border-radius: 10px; */
+  font-size: 1em;
+  font-family: sans-serif;
+}
+
+/* .wine-details-section {
   width: 70%;
   margin: 100px 15% 50px 15%;
   height: 600px;
   border-radius: 10px;
-  font-size: 1em;
-  font-family: sans-serif;
+  
   border: 3px solid firebrick;
   padding: 20px;
-  background-color: whitesmoke;
-}
+  
+} */
 
 .wine-details-section .hidden-height {
   height: 20px;
@@ -207,11 +207,11 @@ button a {
 
 @media only screen and (min-width : 480px) {
 /* Styles */
-  .wine-details-section {
+  /* .wine-details-section {
     width: calc(100% - 12px);
     margin: 100px auto 50px auto;
     overflow: hidden;
-  }
+  } */
 
   .wine-details-section button { 
     font-size: 0.5em;
@@ -236,11 +236,11 @@ button a {
 
 @media only screen and (min-width : 768px) {
 /* Styles */
-  .wine-details-section {
+  /* .wine-details-section {
     width: calc(100% - 12px);
     margin: 100px auto 50px auto;
     overflow: hidden;
-  }
+  } */
 
   .wine-details-section button { 
     font-size: 1em;
@@ -265,11 +265,11 @@ button a {
 
 @media only screen and (min-height : 1300px) and (min-width : 1024px) {
 /* Styles */
-  .wine-details-section {
+  /* .wine-details-section {
     min-height: 600px;
     max-height: 1000px;
     overflow: hidden;
-  }
+  } */
   .hidden-height {
     height: 0;
   }
