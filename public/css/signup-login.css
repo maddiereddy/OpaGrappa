@@ -65,12 +65,14 @@ button[type="submit"]:hover,
 button[type="submit"]:focus,
 button[type="button"]:hover,
 button[type="button"]:focus {
-  background-color: maroon;
+  background-color: whitesmoke;
   transition: background 0.1s;
-  outline-color: firebrick;
+  color: firebrick;
+  border: 3px solid firebrick;
+  border-radius: 10px;
 }
 
-button.delete {
+/* button.delete {
   background: #cd8613; 
 }
 
@@ -78,7 +80,7 @@ button.delete:hover,
 button.delete:focus {
   background-color: #cd6f11;
   transition: background 0.1s;
-}
+} */
 
 button a {
   text-decoration: none;
@@ -91,7 +93,7 @@ button a {
 #add-button {
   float: right;
   margin: 6px;
-  width: 100px;
+  width: 140px;
   padding: 10px;
 }
 
