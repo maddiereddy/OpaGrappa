@@ -18,7 +18,7 @@
     </header>
 
     <form role="main" class="setup-form">
-      <fieldset>
+      <fieldset class="setup-fieldset">
         <legend>Login</legend>
         <label for="username">Email</label>
         <input type="email" placeholder="username" name="username" id="username" required/>
@@ -26,12 +26,18 @@
         <input placeholder="password" type="password" name="password" id="password" required/>
         <button id="signup" type="submit">Login</button>
 
-        <p class="switch">Don't have an account? <a href="signup.html"> Create one here!</a></p>
-        <p class="demo-login">Demo Credentials:</p>
-        <p class="demo-account"><u>Email</u>: demo@test.com, <u>Password</u>: password</p>
+        <p class="switch">Don't have an account?</p> 
+        <p class="switch"><a href="signup.html"> Create one here!</a></p>
+        <div class="demo">
+          <p class="demo-login">Demo Credentials:</p>
+          <p class="demo-account">
+            Email: <span class="italic">demo@test.com </span> <br>
+            Password: <span class="italic">password</span>
+          </p>
+        </div>
       </fieldset>
     </form>  
-
+    <!-- <div class="setup-hidden"></div> -->
     <footer role="contentinfo">
       <section role="region" class="footer-copyright">
         <p>

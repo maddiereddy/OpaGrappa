@@ -6,6 +6,94 @@
     box-sizing: border-box;
 }
 
+form {
+  margin: 100px auto;
+  padding: 10px;
+  width: calc(100% - 20px);
+  border-radius: 10px;
+  background-color: whitesmoke;
+  display: block;
+  border: 2px solid firebrick;
+  max-width: 800px;
+}
+
+fieldset {
+  width: inherit;
+  height: inherit;
+  left: 0;
+  top: 0;
+  padding: 0;
+  border: 0;
+  margin: auto;
+}
+
+form legend {
+  font-size: 35px;
+  font-weight: normal;
+  color: black;
+  text-align: center;
+  margin: 20px auto;
+}
+
+form p {
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+}
+
+input, 
+textarea {
+  display: block;
+  /* width: 80%; */
+  height: auto;
+  font-size: 18px;
+  text-align: left;
+  padding: 12px;
+  border: 2px solid firebrick;
+  border-radius: 12px;
+  background: white;
+  margin: 10px auto 20px;
+}
+
+/* label {
+  margin-left: 10%;
+} */
+
+button[type="submit"], 
+button[type="button"] {
+  display: block;
+  float: right;
+  margin: 6px;
+  width: 140px;
+  padding: 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  color: whitesmoke;
+  background-color: firebrick;
+  border: 0;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 5px;
+  border: 3px solid firebrick;
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:focus,
+button[type="button"]:hover,
+button[type="button"]:focus {
+  background-color: whitesmoke;
+  transition: background 0.1s;
+  color: firebrick;
+  border: 3px solid firebrick;
+  border-radius: 10px;
+}
+
+button a {
+  text-decoration: none;
+  color: white;
+}
+
 hr { 
   display: block;
   margin-top: 0.5em;
@@ -21,8 +109,8 @@ hr {
 }
 
 html, body {
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
   height: 100%;
   width: 100%;
 }
@@ -67,7 +155,7 @@ header h2 {
 
 .signup-login-list-item {
   float: right;
-  margin-top: 30px;
+  margin-top: 35px;
   margin-right: 8px;
 }
 
@@ -75,7 +163,7 @@ header h2 {
   float: right;
   color: gainsboro;
   height: 1em;
-  font-size: 0.9em;
+  font-size: 1em;
   cursor: pointer;
   padding: 3px;
 }
@@ -112,7 +200,7 @@ nav li {
 main {
   height: 100%;
   width: 100%;
-  margin: auto;
+  margin: 0;
 }
 
 footer {
@@ -232,13 +320,14 @@ footer {
 /* dashboard page */
 
 .search-section {
-  margin: 130px 10px 50px;
+  margin: 130px auto 50px;
   height: 240px;
   border-radius: 10px;
   font-family: sans-serif;
   border: 2px solid firebrick;
   padding: 15px;
   display: block;
+  max-width: 800px;
 }
 
 .search-section legend {
@@ -297,8 +386,9 @@ tbody td a:visited {
   display: block;
   border: 2px solid firebrick;
   border-radius: 10px;
-  padding: 5px;
-  margin: 0 10px;
+  padding: 10px;
+  margin: 0 auto;
+  max-width: 800px;
 }
 
 .wines-table {
@@ -373,11 +463,74 @@ tbody td a:visited {
   border-radius: 10px;
 }
 
-.wines-table .fa-button:hover,
-.wines-table .fa-button:focus {
-  background-color: gainsboro;
-  transition: background 0.2s;
+.wine-details-section {
+  font-size: 1em;
+  font-family: sans-serif;
 }
+
+.wine-details-section .hidden-height {
+  height: 20px;
+}
+
+.wine-details-section legend {
+  font-size: 1.5em;
+  font-weight: bolder;
+  color: firebrick;
+  padding: 2px 0px ;
+}
+
+.wine-details-section label {
+  font-size: 1em;
+  color: firebrick;
+  font-weight: bolder;
+}
+
+.wine-details-section input[type="text"], 
+.wine-details-section textarea {
+  background-color: gainsboro;
+  font-size: 13px;
+  font-weight: bolder;
+  line-height: 18px;
+  height: 30px;
+  border: 1px solid silver;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.wine-details-section textarea {
+  height: 60px;
+  resize: none;
+  overflow: auto;
+}  
+
+.wine-details-section button {
+  width: 21%;
+  color: gainsboro;
+  font-size: 1em;
+  margin: 20px 0.5%;
+}
+
+.half-width {
+  width: 48%;
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+#back-button, 
+#edit-button, 
+#delete-button, 
+#add-button {
+  float: right;
+  margin: 6px;
+  width: 140px;
+  padding: 10px;
+}
+
+
 
 /*about section of index page*/
   
@@ -500,6 +653,17 @@ tbody td a:visited {
 
 @media only screen and (min-width: 480px) {
 /* Styles */
+
+.wine-details-section button { 
+  font-size: 0.5em;
+  height: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hidden-height {
+  height: 10px;
+}
   
   .signup-login-list-item {
     float: right;
@@ -527,6 +691,17 @@ tbody td a:visited {
 
 @media only screen and (min-width: 768px) {
 /* Styles */
+
+.wine-details-section button { 
+  font-size: 1em;
+  height: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hidden-height {
+  height: 10px;
+}
 
   .signup-login-list-item {
     float: right;
@@ -572,6 +747,10 @@ tbody td a:visited {
 
   .learn-more-section .inner {
     margin: 30% auto;
+  }
+
+  .hidden-height {
+    height: 0;
   }
 
 }
