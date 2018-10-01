@@ -15,6 +15,7 @@ form {
   display: block;
   border: 2px solid firebrick;
   max-width: 800px;
+  max-height: 600px;
 }
 
 fieldset {
@@ -44,7 +45,6 @@ form p {
 input, 
 textarea {
   display: block;
-  /* width: 80%; */
   height: auto;
   font-size: 18px;
   text-align: left;
@@ -319,14 +319,18 @@ footer {
 
 /* dashboard page */
 
+.search-form {
+  border: none;
+  margin-bottom: 30px;
+}
+
 .search-section {
-  margin: 130px auto 50px;
-  height: 240px;
+  margin: 0px auto;
   border-radius: 10px;
-  font-family: sans-serif;
   border: 2px solid firebrick;
-  padding: 15px;
+  width: 100%;
   display: block;
+  float: none;
   max-width: 800px;
 }
 
@@ -346,10 +350,12 @@ footer {
   color: black;
   border: 2px solid firebrick;
   min-width: 300px;
+  max-width: 500px;
 }
 
 .search-section button {
   display: block;
+  float: none;
   margin: 10px auto 5px;
   font-size: 1.4em;
   background-color: firebrick;
@@ -387,7 +393,7 @@ tbody td a:visited {
   border: 2px solid firebrick;
   border-radius: 10px;
   padding: 10px;
-  margin: 0 auto;
+  margin: 0 20px;
   max-width: 800px;
 }
 
@@ -652,25 +658,23 @@ tbody td a:visited {
 /***** MEDIA QUERIES *****/
 
 @media only screen and (min-width: 480px) {
-/* Styles */
+  .wine-details-section button { 
+    font-size: 0.5em;
+    height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 
-.wine-details-section button { 
-  font-size: 0.5em;
-  height: 50px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.hidden-height {
-  height: 10px;
-}
-  
+  .hidden-height {
+    height: 10px;
+  }
+    
   .signup-login-list-item {
     float: right;
     margin-top: 28px;
     margin-right: 10px;
   }
-  
+
   .signup-login-list-item a {
     float: right;
     height: 1em;
@@ -682,26 +686,19 @@ tbody td a:visited {
   .learn-more-section .inner {
     margin: 40% auto;
   }
-
-  /* .wines-table {
-    margin: 50px 10px;
-    width: calc(100% - 20px);
-  } */
 }
 
 @media only screen and (min-width: 768px) {
-/* Styles */
+  .wine-details-section button { 
+    font-size: 1em;
+    height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 
-.wine-details-section button { 
-  font-size: 1em;
-  height: 50px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.hidden-height {
-  height: 10px;
-}
+  .hidden-height {
+    height: 10px;
+  }
 
   .signup-login-list-item {
     float: right;
@@ -738,7 +735,7 @@ tbody td a:visited {
   }
 
   .search-section select {
-    min-width: 600px;
+    min-width: 500px;
   }
   
 }

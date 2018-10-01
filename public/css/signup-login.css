@@ -1,3 +1,8 @@
+.setup-form {
+  margin: 110px 20px;
+  width: calc(100% - 40px);
+}
+
 .setup-form button {
   float: none;
   margin: 30px auto;
