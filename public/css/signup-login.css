@@ -73,13 +73,18 @@
 
 }
 
-@media only screen and (min-height : 1300px) and (min-width : 1024px) {  
+@media only screen and (min-width : 1024px) {  
   .setup-form input {
     width: 50%;
   }
   
   .setup-form label {
     margin: 30px 25%;
+  }
+
+  .setup-form {
+    margin: 100px auto;
+    width: 800px;
   }
 }
 

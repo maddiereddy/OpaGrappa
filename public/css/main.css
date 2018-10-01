@@ -55,10 +55,6 @@ textarea {
   margin: 10px auto 20px;
 }
 
-/* label {
-  margin-left: 10%;
-} */
-
 button[type="submit"], 
 button[type="button"] {
   display: block;
@@ -179,6 +175,7 @@ caption {
   color: firebrick;
   text-align: center;
   font-size: 3em;
+  margin-bottom: 20px;
 }
 
 nav {
@@ -398,7 +395,7 @@ tbody td a:visited {
 }
 
 .wines-table {
-  width: inherit;
+  width: 100%;
   table-layout: auto;
   border-collapse: collapse;
   margin: 20px auto 10px;
@@ -472,6 +469,13 @@ tbody td a:visited {
 .wine-details-section {
   font-size: 1em;
   font-family: sans-serif;
+  margin: 110px 20px;
+  width: calc(100% - 40px);
+}
+
+.wine-details-section fieldset {
+  margin: 0;
+  width: 100%;
 }
 
 .wine-details-section .hidden-height {
@@ -496,26 +500,26 @@ tbody td a:visited {
   background-color: gainsboro;
   font-size: 13px;
   font-weight: bolder;
-  line-height: 18px;
   height: 30px;
   border: 1px solid silver;
   border-radius: 5px;
-  margin-top: 5px;
-  margin-bottom: 10px;
+  margin: 5px 0 10px;
 }
 
 .wine-details-section textarea {
   height: 60px;
   resize: none;
   overflow: auto;
+  width: 100%;
 }  
 
-.wine-details-section button {
-  width: 21%;
-  color: gainsboro;
-  font-size: 1em;
-  margin: 20px 0.5%;
-}
+.wine-details-section #wine-title {
+  width: 100%;
+} 
+
+.wine-details-section #wine-comments {
+  background-color: white
+} 
 
 .half-width {
   width: 48%;
@@ -534,6 +538,7 @@ tbody td a:visited {
   margin: 6px;
   width: 140px;
   padding: 10px;
+  font-size: 1em;
 }
 
 
@@ -657,14 +662,15 @@ tbody td a:visited {
 
 /***** MEDIA QUERIES *****/
 
-@media only screen and (min-width: 480px) {
-  .wine-details-section button { 
-    font-size: 0.5em;
-    height: 50px;
-    overflow: hidden;
-    text-overflow: ellipsis;
+@media only screen and (max-width: 361px) {
+  #add-button, #back-button { 
+    height: 40px;
+    width: 100px;
+    padding: 0px;
   }
+}
 
+@media only screen and (min-width: 480px) {
   .hidden-height {
     height: 10px;
   }
@@ -689,11 +695,9 @@ tbody td a:visited {
 }
 
 @media only screen and (min-width: 768px) {
-  .wine-details-section button { 
-    font-size: 1em;
-    height: 50px;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  .wine-details-section fieldset {
+    margin: 0 auto;
+    width: 80%;
   }
 
   .hidden-height {
@@ -740,8 +744,7 @@ tbody td a:visited {
   
 }
 
-@media only screen and (min-height : 1300px) and (min-width : 1024px){
-
+@media only screen and (min-width : 1024px){
   .learn-more-section .inner {
     margin: 30% auto;
   }
@@ -750,4 +753,8 @@ tbody td a:visited {
     height: 0;
   }
 
+  .table-section, .wine-details-section {
+    margin: 100px auto;
+    width: 800px;
+  }
 }
