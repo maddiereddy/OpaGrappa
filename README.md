@@ -1,5 +1,5 @@
 # Opa!Grappa!!    <br>
-## <i>An online journal for keeping track of your favorite wines <br>
+## <i>An online journal for keeping track of your favorite wines</i> <br>
  
 
 ## Live Demo
@@ -72,19 +72,19 @@ Add .env file with API URL and variable name `JWT_SECRET`   <br>
 ## Screenshots <br>
 
 ### Index page:<br>
-<img src="/screenshots/index.png" alt="Home page - blank"> <br>
+![landing page](screenshots/index.png)
 
 ### Login page:<br>
-<img src="/screenshots/login.png" alt="Login page - blank"> <br>
+![login page](screenshots/login.png)
 
 ### My List page:<br>
-<img src="/screenshots/mylist.png" alt="My List page - blank"> <br>
+![wine list page](screenshots/mylist.png)
 
 ### Details page:<br>
-<img src="/screenshots/details.png" alt="details page - blank"> <br>
+![wine details page](screenshots/details.png)
 
 ### Search page:<br>
-<img src="/screenshots/search.png" alt="Search page - blank"> <br>
+![search wines page](screenshots/search.png)
 
 
 
