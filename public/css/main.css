@@ -131,7 +131,6 @@ header, footer {
 header {
   top: 0;
   height: 60px;
-  font-family: 'Julee', cursive;
   text-align: left;
   color: firebrick;
   background: linear-gradient(black, #333333);
@@ -139,6 +138,7 @@ header {
 }
 
 header h1 {
+  font-family: 'Julee', cursive;
 	font-size: 2em;
   margin-left: 16px;
   margin-top: 12px;
@@ -146,6 +146,7 @@ header h1 {
 
 header h2 {
   display: none;
+  font-family: 'Barlow';
 }
 
 .signup-login-list-item {
@@ -169,7 +170,7 @@ header h2 {
 }
 
 caption {
-  font-family: 'Julee', cursive;
+  font-family: 'Barlow';
   font-weight: bolder;
   color: firebrick;
   text-align: center;
@@ -245,7 +246,7 @@ footer {
 }
 
 .learn-more-section .user-button {
-  font-family: 'Julee';
+  font-family: 'Barlow';
   margin: 5px auto;
   font-size: 18px;
   border-top-left-radius: 0.8rem;
@@ -641,14 +642,14 @@ tbody td a:visited {
   background-color: black;
   color: whitesmoke;
   font-weight: bolder;
-  font-family: 'Julee', cursive;
+  font-family: 'Barlow';
   font-size: 1.5em;
 }
 
 .modal-body {padding: 1px 10px;}
 
 .modal-body span {
-  font-family: 'Julee', cursive;
+  font-family: 'Barlow';
   font-weight: bolder;
   color: firebrick;
   font-size: 1.2em;
